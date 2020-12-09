@@ -16,7 +16,7 @@ public:
 class Value : public Expression {
     double num;
 public:
-    explicit Value(const double number);
+    Value(const double number);
 
     double calculate() override;
 };

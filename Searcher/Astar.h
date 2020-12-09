@@ -21,13 +21,13 @@ private:
     static State *findState(const vector<State *> &allStates, const State &stateToFind);
 
 public:
-    virtual vector<State *> search(MatrixMaze *searchable);
+    virtual vector<State *> search(MatrixMaze &searchable);
 
     int getNumberOfNodesEvaluated();
 
     vector<State *> backTrace(State *goal);
 
-    vector<State *> backTraceAndUpdateCost(State *s, MatrixMaze *searchable);
+    vector<State *> backTraceAndUpdateCost(State *s, MatrixMaze &searchable);
 
 };
 

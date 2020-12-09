@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Expression/Expression.cpp" "/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.o"
   "/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/Astar.cpp" "/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/CMakeFiles/ProblemSolver.dir/Searcher/Astar.cpp.o"
+  "/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/ReversePolishInterpreter.cpp" "/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.o"
   "/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/main.cpp" "/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/CMakeFiles/ProblemSolver.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

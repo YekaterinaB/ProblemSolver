@@ -6,11 +6,19 @@
 #define PROBLEMSOLVER_MATHSOLVER_H
 
 #include "Solver.h"
+#include "../Expression/Expression.h"
 
-class MathSolver : public Solver<string,string,Expression>{
+class MathSolver : public Solver<string,double,string>{
 public:
-    virtual string toString(const string &solution);
+    virtual string toString(const double &solution){
+        return to_string(solution);
+    }
 
-    virtual string solve(const string &problem);
+    virtual double solve(const string &problem){
+        string mathExp=problem;
+        double answer =searcher->search(mathExp);
+        return answer;
+    }
+    virtual ~MathSolver()= default;
 };
 #endif //PROBLEMSOLVER_MATHSOLVER_H

@@ -83,19 +83,49 @@ CMakeFiles/ProblemSolver.dir/Searcher/Astar.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProblemSolver.dir/Searcher/Astar.cpp.s"
 	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/Astar.cpp -o CMakeFiles/ProblemSolver.dir/Searcher/Astar.cpp.s
 
+CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.o: CMakeFiles/ProblemSolver.dir/flags.make
+CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.o: ../Searcher/ReversePolishInterpreter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.o -c /cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/ReversePolishInterpreter.cpp
+
+CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/ReversePolishInterpreter.cpp > CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.i
+
+CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/ReversePolishInterpreter.cpp -o CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.s
+
+CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.o: CMakeFiles/ProblemSolver.dir/flags.make
+CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.o: ../Expression/Expression.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.o -c /cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Expression/Expression.cpp
+
+CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Expression/Expression.cpp > CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.i
+
+CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Expression/Expression.cpp -o CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.s
+
 # Object files for target ProblemSolver
 ProblemSolver_OBJECTS = \
 "CMakeFiles/ProblemSolver.dir/main.cpp.o" \
-"CMakeFiles/ProblemSolver.dir/Searcher/Astar.cpp.o"
+"CMakeFiles/ProblemSolver.dir/Searcher/Astar.cpp.o" \
+"CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.o" \
+"CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.o"
 
 # External object files for target ProblemSolver
 ProblemSolver_EXTERNAL_OBJECTS =
 
 ProblemSolver.exe: CMakeFiles/ProblemSolver.dir/main.cpp.o
 ProblemSolver.exe: CMakeFiles/ProblemSolver.dir/Searcher/Astar.cpp.o
+ProblemSolver.exe: CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.o
+ProblemSolver.exe: CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.o
 ProblemSolver.exe: CMakeFiles/ProblemSolver.dir/build.make
 ProblemSolver.exe: CMakeFiles/ProblemSolver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ProblemSolver.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ProblemSolver.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ProblemSolver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

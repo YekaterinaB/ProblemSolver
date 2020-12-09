@@ -1,15 +1,15 @@
 #include <algorithm>
 #include "Astar.h"
 
-vector<State *> Astar::search(MatrixMaze *searchable) {
+vector<State *> Astar::search(MatrixMaze &matrixMaze) {
     this->numberOfNodesEvaluated = 0;
     // The set of discovered nodes that may need to be (re-)expanded.
     // Initially, only the start node is known.
-    State *initialState = searchable->getInitialState();
-    initialState->setCost(searchable->getCostToGetToNode(initialState));
-    State goalState = searchable->getGoalState();
+    State *initialState = matrixMaze.getInitialState();
+    initialState->setCost(matrixMaze.getCostToGetToNode(initialState));
+    State goalState = matrixMaze.getGoalState();
     CustomPriorityQueue<State, vector<State>, greater<>> openSet;
-    initialState->setCost(searchable->getCostToGetToNode(initialState));
+    initialState->setCost(matrixMaze.getCostToGetToNode(initialState));
     vector<State *> currentStates = {initialState};
     openSet.push(*currentStates.at(0));
 
@@ -25,7 +25,7 @@ vector<State *> Astar::search(MatrixMaze *searchable) {
 
     // For node n, fScore[n] := gScore[n] + h(n).
     map<State *, double> fScore;
-    fScore[initialState] = gScore[initialState] + searchable->getHeuristic(initialState);
+    fScore[initialState] = gScore[initialState] + matrixMaze.getHeuristic(initialState);
 
     State current;
     double tentative_gScore = 0;
@@ -42,20 +42,20 @@ vector<State *> Astar::search(MatrixMaze *searchable) {
         currentStates.erase(remove(currentStates.begin(), currentStates.end(),
                                    currentStatePointer), currentStates.end());
 
-        for (auto neighbor : searchable->getAllPossibleStates(currentStatePointer)) {
+        for (auto neighbor : matrixMaze.getAllPossibleStates(currentStatePointer)) {
             // d(current,neighbor) is the weight of the edge from current to neighbor
             // tentative_gScore is the distance from start to the neighbor through current
             if (gScore.find(neighbor) == gScore.end()) {
                 gScore[neighbor] = numeric_limits<double>::infinity();
             }
 
-            tentative_gScore = gScore[currentStatePointer] + searchable->getCostToGetToNode(neighbor);
+            tentative_gScore = gScore[currentStatePointer] + matrixMaze.getCostToGetToNode(neighbor);
 
             if (tentative_gScore < gScore[neighbor]) {
                 // This path to neighbor is better than any previous one. Record it!
                 neighbor->setCameFrom(currentStatePointer);
                 gScore[neighbor] = tentative_gScore;
-                fScore[neighbor] = gScore[neighbor] + searchable->getHeuristic(neighbor);
+                fScore[neighbor] = gScore[neighbor] + matrixMaze.getHeuristic(neighbor);
                 neighbor->setCost(gScore[neighbor]);
                 if (!openSet.contains(*neighbor)) {
                     openSet.push(*neighbor);
@@ -93,12 +93,12 @@ vector<State *> Astar::backTrace(State *goal) {
     return backtrace;
 }
 
-vector<State *> Astar::backTraceAndUpdateCost(State *s, MatrixMaze *searchable) {
+vector<State *> Astar::backTraceAndUpdateCost(State *s, MatrixMaze &searchable) {
     vector<State *> route = backTrace(s);
 
     double cost = 0;
     for (auto it = route.begin(); it != route.end(); it++) {
-        cost += searchable->getCostToGetToNode(*it);
+        cost += searchable.getCostToGetToNode(*it);
         (*it)->setCost(cost);
     }
     return route;

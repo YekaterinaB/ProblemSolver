@@ -15,21 +15,24 @@
 class MatrixSolver : public Solver<string, vector<State * >,MatrixMaze> {
 
 private:
-    MatrixMaze *searchable{};
-
+    MatrixMaze searchable{};
+    void createProblemFromString(const string &str);
 public:
     explicit MatrixSolver(Searcher<vector<State *>,MatrixMaze> *s) {
         searcher = s;
     }
 
-    void createProblemFromString(const string &str);
+   // initialize matrixMaze
 
     virtual string toString(const vector<State *> &backtrace);
 
-    virtual vector<State *> solve(const string &problem);
+    virtual vector<State *> solve(const string &problem){
+        createProblemFromString(problem);
+        vector<State *> backtrace = searcher->search(searchable);
+        return backtrace;
+    }
 
     virtual ~MatrixSolver() {
-        delete searchable;
         delete searcher;
     }
 
