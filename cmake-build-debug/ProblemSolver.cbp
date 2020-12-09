@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ProblemSolver"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProblemSolver">
+				<Option output="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/ProblemSolver.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../lib/../include/w32api"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProblemSolver"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ProblemSolver/fast">
+				<Option output="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/ProblemSolver.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/9.3.0/../../../../lib/../include/w32api"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 ProblemSolver/fast"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j8 -f &quot;/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Expression/Expression.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Expression/Variable.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Maze/MatrixMaze.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Maze/State.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/Astar.cpp">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/Astar.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/CustomPriorityQueue.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/ReversePolishInterpreter.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/Searcher.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Solver/MathSolver.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Solver/MatrixSolver.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Solver/Solver.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/StringUtils.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/main.cpp">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

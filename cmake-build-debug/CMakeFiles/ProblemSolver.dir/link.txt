@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/ProblemSolver.dir/main.cpp.o CMakeFiles/ProblemSolver.dir/Searcher/Astar.cpp.o  -o ProblemSolver.exe -Wl,--out-implib,libProblemSolver.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
