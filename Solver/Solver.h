@@ -9,7 +9,7 @@
 #include "../Searcher/Searcher.h"
 
 using namespace std;
-
+//P problem, S solution, T parsed problem
 template<typename P, typename S,typename T>
 class Solver {
 protected:

@@ -123,6 +123,33 @@ ProblemSolver/fast:
 	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/build
 .PHONY : ProblemSolver/fast
 
+Expression/Expression.o: Expression/Expression.cpp.o
+
+.PHONY : Expression/Expression.o
+
+# target to build an object file
+Expression/Expression.cpp.o:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.o
+.PHONY : Expression/Expression.cpp.o
+
+Expression/Expression.i: Expression/Expression.cpp.i
+
+.PHONY : Expression/Expression.i
+
+# target to preprocess a source file
+Expression/Expression.cpp.i:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.i
+.PHONY : Expression/Expression.cpp.i
+
+Expression/Expression.s: Expression/Expression.cpp.s
+
+.PHONY : Expression/Expression.s
+
+# target to generate assembly for a file
+Expression/Expression.cpp.s:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.s
+.PHONY : Expression/Expression.cpp.s
+
 Searcher/Astar.o: Searcher/Astar.cpp.o
 
 .PHONY : Searcher/Astar.o
@@ -149,6 +176,33 @@ Searcher/Astar.s: Searcher/Astar.cpp.s
 Searcher/Astar.cpp.s:
 	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Searcher/Astar.cpp.s
 .PHONY : Searcher/Astar.cpp.s
+
+Searcher/ReversePolishInterpreter.o: Searcher/ReversePolishInterpreter.cpp.o
+
+.PHONY : Searcher/ReversePolishInterpreter.o
+
+# target to build an object file
+Searcher/ReversePolishInterpreter.cpp.o:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.o
+.PHONY : Searcher/ReversePolishInterpreter.cpp.o
+
+Searcher/ReversePolishInterpreter.i: Searcher/ReversePolishInterpreter.cpp.i
+
+.PHONY : Searcher/ReversePolishInterpreter.i
+
+# target to preprocess a source file
+Searcher/ReversePolishInterpreter.cpp.i:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.i
+.PHONY : Searcher/ReversePolishInterpreter.cpp.i
+
+Searcher/ReversePolishInterpreter.s: Searcher/ReversePolishInterpreter.cpp.s
+
+.PHONY : Searcher/ReversePolishInterpreter.s
+
+# target to generate assembly for a file
+Searcher/ReversePolishInterpreter.cpp.s:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.s
+.PHONY : Searcher/ReversePolishInterpreter.cpp.s
 
 main.o: main.cpp.o
 
@@ -186,9 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ProblemSolver"
 	@echo "... edit_cache"
+	@echo "... Expression/Expression.o"
+	@echo "... Expression/Expression.i"
+	@echo "... Expression/Expression.s"
 	@echo "... Searcher/Astar.o"
 	@echo "... Searcher/Astar.i"
 	@echo "... Searcher/Astar.s"
+	@echo "... Searcher/ReversePolishInterpreter.o"
+	@echo "... Searcher/ReversePolishInterpreter.i"
+	@echo "... Searcher/ReversePolishInterpreter.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.o"
   "CMakeFiles/ProblemSolver.dir/Searcher/Astar.cpp.o"
+  "CMakeFiles/ProblemSolver.dir/Searcher/ReversePolishInterpreter.cpp.o"
   "CMakeFiles/ProblemSolver.dir/main.cpp.o"
   "ProblemSolver.exe"
   "ProblemSolver.pdb"
