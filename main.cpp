@@ -1,12 +1,11 @@
 #include "Menu/Menu.h"
 #include "Menu/CommandPromptMenu.h"
-#include creating-configuration
-#include "SolverFactory.h"
 #include "Configuration/Configuration.h"
 
 int main() {
-  // Configuration::readXmlFile("config.xml");
-    Menu *m = new CommandPromptMenu();
+    vector<pair<string, vector<string>>> solvers = Configuration::readXmlFile("config.xml");
+    vector<string> parser={};
+    Menu *m = new CommandPromptMenu(solvers,parser);
     m->showMenu();
 
     delete m;
