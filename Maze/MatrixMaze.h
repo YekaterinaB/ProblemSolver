@@ -6,6 +6,7 @@
 #define PROBLEMSOLVER_MATRIXMAZE_H
 
 #include "../StringUtils.h"
+#include "State.h"
 
 class MatrixMaze {
 private:

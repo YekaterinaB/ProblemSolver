@@ -1,10 +1,9 @@
 #include "Menu/Menu.h"
 #include "Menu/CommandPromptMenu.h"
-#include "SolverFactory.h"
+#include "Factory/SolverFactory.h"
 
 int main() {
-    SolverFactory solverFactory = SolverFactory();
-    Menu *m = new CommandPromptMenu(solverFactory);
+    Menu *m = new CommandPromptMenu();
     m->showMenu();
 
     delete m;
