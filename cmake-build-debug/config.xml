@@ -1,0 +1,4 @@
+<head>
+    <MatrixSolver>A*</MatrixSolver>
+    <MathSolver>Reverse Polish Interpreter1, Reverse Polish Interpreter2, Reverse Polish Interpreter3</MathSolver>
+</head>
