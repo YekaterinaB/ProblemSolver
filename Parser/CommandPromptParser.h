@@ -8,7 +8,8 @@ using namespace std;
 
 class CommandPromptParser : public Parser {
 public:
-    virtual void parse();
+    virtual string parse();
+    virtual ~CommandPromptParser()= default;
 };
 
 #endif //PROBLEMSOLVER_COMMANDPROMPTPARSER_H

@@ -14,6 +14,7 @@ private:
     void parseFile();
 
 public:
-    virtual void parse();
+    virtual string parse();
+    virtual ~FileParser()= default;
 };
 #endif //PROBLEMSOLVER_FILEPARSER_H
