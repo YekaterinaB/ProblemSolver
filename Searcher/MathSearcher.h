@@ -1,8 +1,13 @@
+//
+// Created by katya on 12/10/2020.
+//
+
 #ifndef PROBLEMSOLVER_MATHSEARCHER_H
 #define PROBLEMSOLVER_MATHSEARCHER_H
 
 #include <string>
-#include "Searcher.h"
+
+using namespace std;
 
 class MathSearcher : public Searcher<double, string> {
 protected:
@@ -10,11 +15,8 @@ protected:
         return s == "-" || s == "+" ||
                s == "*" || s == "/";
     }
-
 public:
-
-    virtual double search(const string &mathExp)=0;
-    virtual ~MathSearcher()= default;
+    virtual double search(string &searchable) = 0;
 
 };
 
