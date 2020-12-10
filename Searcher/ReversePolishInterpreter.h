@@ -34,9 +34,9 @@ private:
 
 
 public:
-    virtual double search(const string &mathExp);
+    virtual double search(string &mathExp);
 
-
+    virtual ~ReversePolishInterpreter() = default;
 };
 
 #endif //PROBLEMSOLVER_REVERSEPOLISHINTERPRETER_H

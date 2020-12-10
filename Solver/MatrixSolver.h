@@ -18,7 +18,7 @@ private:
     MatrixMaze searchable = MatrixMaze();
     void createProblemFromString(const string &str);
 public:
-    explicit MatrixSolver(Searcher<vector<State *>,MatrixMaze> *s) {
+    explicit MatrixSolver(MatrixSearcher *s) {
         searcher = s;
     }
 
