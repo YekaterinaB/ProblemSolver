@@ -125,11 +125,6 @@ void ReversePolishInterpreter::closedParenthesisTokenCase(stack<string> &operato
     countOpenParenthesis--;
 }
 
-bool ReversePolishInterpreter::isOperator(const string &s) {
-    return s == "-" || s == "+" ||
-           s == "*" || s == "/";
-}
-
 Expression *ReversePolishInterpreter::interpret(const string &mathExp) {
     queue<string> polish = getReversePolish(mathExp);
     stack<Expression *> expressionStack;

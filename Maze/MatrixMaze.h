@@ -17,6 +17,7 @@ private:
     vector<State *> allStates;
 
 public:
+    MatrixMaze();
     MatrixMaze(double **mat, int N, int M, State &ini, State g) {
         sizeCol = M;
         sizeRow = N;

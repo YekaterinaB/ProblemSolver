@@ -15,7 +15,7 @@
 class MatrixSolver : public Solver<string, vector<State * >,MatrixMaze> {
 
 private:
-    MatrixMaze searchable{};
+    MatrixMaze searchable = MatrixMaze();
     void createProblemFromString(const string &str);
 public:
     explicit MatrixSolver(Searcher<vector<State *>,MatrixMaze> *s) {

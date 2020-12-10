@@ -1,6 +1,12 @@
-#include <iostream>
+#include "Menu/Menu.h"
+#include "Menu/CommandPromptMenu.h"
+#include "SolverFactory.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    SolverFactory solverFactory = SolverFactory();
+    Menu *m = new CommandPromptMenu(solverFactory);
+    m->showMenu();
+
+    delete m;
     return 0;
 }

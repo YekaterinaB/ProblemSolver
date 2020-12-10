@@ -10,11 +10,12 @@
 #include <regex>
 #include "Searcher.h"
 #include "../Expression/Expression.h"
+#include "MathSearcher.h"
 
 using namespace std;
 
 
-class ReversePolishInterpreter : public Searcher<double, string> {
+class ReversePolishInterpreter : public MathSearcher {
 private:
     char excep[128];
 
@@ -31,10 +32,9 @@ private:
     void operatorTokenCase(stack<string> &operatorStack, queue<string> &outputQueue, char *token, int loopNum,
                            char *lastToken);
 
-    bool isOperator(const string &s);
 
 public:
-    double search(const string &mathExp);
+    virtual double search(const string &mathExp);
 
 
 };
