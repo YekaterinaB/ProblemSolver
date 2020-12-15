@@ -11,18 +11,15 @@
 #include <utility>
 #include <iterator>
 #include "../StringUtils.h"
+#include "../json/single_include/nlohmann/json.hpp"
 
-#define HEAD_TAG "head>"
 using namespace std;
+using json = nlohmann::json;
 
 class Configuration {
-private:
-    static inline std::pair<std::string, std::vector<std::string>> getPair(string &s);
-
-    static inline vector<string> split(string str, const string &token);
-
 public:
-    static vector<std::pair<std::string, vector<std::string>>> readXmlFile(const string &dir);
+    static pair<pair<string, vector<pair<string, vector<string>>>>, pair<string, vector<string>>>
+    readJSONFile(const string &dir);
 };
 
 #endif //PROBLEMSOLVER_CONFIGURATION_H
