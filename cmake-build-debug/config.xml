@@ -1,9 +1,0 @@
-<head>
-    <Solvers>
-        <MatrixSolver>A*</MatrixSolver>
-        <MathSolver>Reverse Polish Interpreter</MathSolver>
-    </Solvers>
-    <Parsers>
-        FileParser,CommandPromptParser
-    </Parsers>
-</head>
