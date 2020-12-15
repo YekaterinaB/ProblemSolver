@@ -24,8 +24,11 @@ public:
         string solution;
         try {
             solution=searcher->search(problem);
-        } catch (const std::exception &e) {
-            solution = e.what();
+        } catch (const string &e) {
+            solution = e;
+        }catch(...){
+            solution="An error has accured.";
+
         }
 
         return solution+"\n";

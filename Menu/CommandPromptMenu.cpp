@@ -9,12 +9,12 @@ bool CommandPromptMenu::solveProblem() {
     delete p;
     delete s;
 
-    cout << "The solution is: "+ solution<< endl;
+    cout << "The solution is:\n "+ solution<< endl;
     return doYouWantToSolveAgain();
 }
 bool CommandPromptMenu::doYouWantToSolveAgain() {
     int indexParser = 0;
-    cout << "Do you want to solve another problem?:" << endl;
+    cout << "Do you want to solve another problem?" << endl;
     cout << "(1) Yes" << endl;
     cout << "(2) No" << endl;
     cin >> indexParser;
