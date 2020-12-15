@@ -28,9 +28,9 @@ public:
         goal = g;
     }
 
-    State *getInitialState() { return initial; }
+    State * getInitialState()const { return initial; }
 
-    State getGoalState() { return goal; }
+    State getGoalState()const  { return goal; }
 
     vector<State *> getAllPossibleStates(State *s) {
         vector<State *> succesors = {};
@@ -103,7 +103,7 @@ public:
         return cost;
     }
 
-    string getDirection(State *s) {
+    string getDirection(State *s) const{
         string direction;
         vector<int> place = getPlacementOfNodeInMatrix(s);
         vector<int> dadsPlace = getPlacementOfNodeInMatrix(s->getFather());
@@ -131,7 +131,7 @@ public:
         return matrix[r][c];
     }
 
-    vector<int> getPlacementOfNodeInMatrix(State *s) {
+    vector<int> getPlacementOfNodeInMatrix(State *s) const {
         vector<string> place =
                 StringUtils::splitByFirstChar((*s).getDescription(), ',');
         int r = atoi(place.at(0).c_str());
@@ -140,6 +140,25 @@ public:
         placement.push_back(r);
         placement.push_back(c);
         return placement;
+    }
+
+
+    static bool areInitialAndGoalValid(const State &initial, const State &goal, int N, int M) {
+        bool valid = true;
+        auto initialSplitted = StringUtils::split(initial.getDescription(), ',');
+        auto goalSplitted = StringUtils::split(goal.getDescription(), ',');
+
+        auto xInitial = stod(initialSplitted.at(0));
+        auto yInitial = stod(initialSplitted.at(1));
+        auto xGoal = stod(goalSplitted.at(0));
+        auto yGoal = stod(goalSplitted.at(1));
+
+        if (xInitial < 0 || yInitial < 0 || xGoal < 0 || yGoal < 0
+            || xInitial >= N || yInitial >= M || xGoal >= N || yGoal >= M) {
+            valid = false;
+        }
+
+        return valid;
     }
 
 

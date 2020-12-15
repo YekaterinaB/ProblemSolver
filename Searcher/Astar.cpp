@@ -35,7 +35,7 @@ string Astar::search(const string &matrixMazeStr) {
         currentStatePointer = findState(currentStates, current);
         if (current == goalState) {
             vector<State*> trace= backTrace(currentStatePointer);
-            return toString(trace);
+            return toString(trace,matrixMaze);
         }
 
         openSet.pop();

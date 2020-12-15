@@ -1,7 +1,3 @@
-//
-// Created by katya on 12/10/2020.
-//
-
 #ifndef PROBLEMSOLVER_SOLVERFACTORY_H
 #define PROBLEMSOLVER_SOLVERFACTORY_H
 #include <vector>

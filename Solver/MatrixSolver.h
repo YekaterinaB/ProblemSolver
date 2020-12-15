@@ -21,8 +21,14 @@ public:
     }
 
     virtual string solve(const string &problem) {
-        string backtrace = searcher->search(problem);
-        return backtrace;
+        string solution;
+        try {
+            solution=searcher->search(problem);
+        } catch (const std::exception &e) {
+            solution = e.what();
+        }
+
+        return solution+"\n";
     }
 
     virtual ~MatrixSolver() {
