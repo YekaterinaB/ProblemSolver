@@ -18,7 +18,13 @@ public:
 
     virtual string solve(const string &problem) {
         string mathExp = problem;
-        return searcher->search(mathExp);
+        string solution;
+        try {
+            solution = searcher->search(mathExp);
+        }catch (const std::exception &e){
+            solution=e.what();
+        }
+        return solution+"\n";
     }
 
     virtual ~MathSolver(){

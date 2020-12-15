@@ -8,7 +8,7 @@
 #include "../Maze/MatrixMaze.h"
 #include "../Maze/State.h"
 #include "Searcher.h"
-
+#define POINTS_REGEX "^\\d+,\\d+$"
 class MatrixSearcher : public Searcher {
 protected:
 
@@ -16,9 +16,9 @@ protected:
 
     vector<State *> backTrace(State *goal);
 
-    MatrixMaze createProblemFromString(const string &str){}
+    MatrixMaze createProblemFromString(const string &str);
 
-    string toString(const vector<State *> &backtrace){}
+    string toString(const vector<State *> &backtrace,const MatrixMaze &matrixMaze);
 
 
 public:
