@@ -1,8 +1,8 @@
 #include <algorithm>
 #include "Astar.h"
 
-vector<State *> Astar::search(MatrixMaze &matrixMaze) {
-    this->numberOfNodesEvaluated = 0;
+string Astar::search(const string &matrixMazeStr) {
+    MatrixMaze matrixMaze =createProblemFromString(matrixMazeStr);
     // The set of discovered nodes that may need to be (re-)expanded.
     // Initially, only the start node is known.
     State *initialState = matrixMaze.getInitialState();
@@ -33,9 +33,9 @@ vector<State *> Astar::search(MatrixMaze &matrixMaze) {
     while (!openSet.empty()) {
         current = openSet.top();
         currentStatePointer = findState(currentStates, current);
-        ++this->numberOfNodesEvaluated;
         if (current == goalState) {
-            return backTrace(currentStatePointer);
+            vector<State*> trace= backTrace(currentStatePointer);
+            return toString(trace,matrixMaze);
         }
 
         openSet.pop();

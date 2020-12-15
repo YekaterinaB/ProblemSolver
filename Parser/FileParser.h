@@ -11,14 +11,12 @@ class FileParser : public Parser {
 private:
     string fileName;
 
-    void parseFile();
+    void parseFile(){}
 
 public:
     FileParser() = default;
 
-    virtual string parse(){
-
-    }
+    virtual string parse(){    }
 
     virtual ~FileParser() = default;
 };

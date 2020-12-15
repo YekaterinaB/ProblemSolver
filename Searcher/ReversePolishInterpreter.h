@@ -34,7 +34,7 @@ private:
 
 
 public:
-    virtual double search(string &mathExp);
+    virtual string search(const string &mathExp);
 
     virtual ~ReversePolishInterpreter() = default;
 };

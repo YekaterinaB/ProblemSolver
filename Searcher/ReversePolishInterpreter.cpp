@@ -29,7 +29,7 @@ void ReversePolishInterpreter::readingStringToReversePolish(const string &mathEx
                 if (!regex_match(number, doubleNumberRegex)) {
                     strcpy(this->excep, "Character is not number double: ");
                     strcat(this->excep, number);
-                    throw this->excep;
+                    throw string(this->excep);
                 }
                 outputQueue.push(number);
                 numberVector.clear();
@@ -63,7 +63,7 @@ queue<string> ReversePolishInterpreter::getReversePolish(const string &mathExp) 
     readingStringToReversePolish(mathExp, outputQueue, operatorStack, numberVector, countOpenParenthesis);
 
     if (countOpenParenthesis > 0) {//more open than closed Parenthesis.
-        throw "There is more open parenthesis then closed ones.";
+        throw string("There is more open parenthesis then closed ones.");
     }
 
     if (!numberVector.empty()) {
@@ -73,7 +73,7 @@ queue<string> ReversePolishInterpreter::getReversePolish(const string &mathExp) 
         if (!regex_match(number, doubleNumberRegex)) {
             strcpy(this->excep, "Character is not number double: ");
             strcat(this->excep, number);
-            throw this->excep;
+            throw string(this->excep);
         }
         outputQueue.push(number);
         numberVector.clear();
@@ -112,13 +112,13 @@ void ReversePolishInterpreter::operatorTokenCase(stack<string> &operatorStack, q
 void ReversePolishInterpreter::closedParenthesisTokenCase(stack<string> &operatorStack, queue<string> &outputQueue,
                                                           int &countOpenParenthesis) {
     if (operatorStack.empty()) {
-        throw "There is more close parenthesis then open ones.";
+        throw string("There is more close parenthesis then open ones.");
     }
     while (operatorStack.top() != "(") {
         outputQueue.push(operatorStack.top());
         operatorStack.pop();
         if (operatorStack.empty()) {
-            throw "There is more close parenthesis then open ones.";
+            throw string("There is more close parenthesis then open ones.");
         }
     }
     operatorStack.pop(); // pop "(" OpenParenthesis
@@ -135,12 +135,12 @@ Expression *ReversePolishInterpreter::interpret(const string &mathExp) {
             polish.pop();
 
             if (expressionStack.empty()) {
-                throw "Missing expressions.";
+                throw string("Missing expressions.");
             }
             Expression *exp1 = expressionStack.top();
             expressionStack.pop();
             if (expressionStack.empty()) {
-                throw "Missing expressions.";
+                throw string("Missing expressions.");
             }
             Expression *exp2 = expressionStack.top();
             expressionStack.pop();
@@ -161,21 +161,21 @@ Expression *ReversePolishInterpreter::interpret(const string &mathExp) {
             } else {
                 strcpy(this->excep, "Not a number nor a operator inserted in string: ");
                 strcat(this->excep, front.c_str());
-                throw this->excep;
+                throw string(this->excep);
             }
         }
     }
     if (expressionStack.size() > 1 || expressionStack.empty()) {
-        throw "Missing expressions.";
+        throw string("Missing expressions.");
     }
     return expressionStack.top();
 }
 
- double ReversePolishInterpreter::search(string &mathExp) {
+ string ReversePolishInterpreter::search(const string &mathExp) {
     Expression *e = interpret(mathExp);
     double result= e->calculate();
     delete e;
-    return result;
+    return to_string(result);
 }
 
 

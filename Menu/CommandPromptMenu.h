@@ -6,14 +6,14 @@
 
 class CommandPromptMenu : public Menu {
 private:
-    void chooseSolverAndSearcher();
+    Solver * chooseSolverAndSearcher();
     Parser * chooseParser();
-
+    bool doYouWantToSolveAgain();
 
 public:
     CommandPromptMenu(vector<pair<string, vector<string>>> &s, vector<string> &p) : Menu(s,p) {}
 
-    virtual void showMenu();
+    virtual bool solveProblem();
 
     virtual ~CommandPromptMenu() = default;
 };

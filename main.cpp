@@ -6,14 +6,13 @@ int main() {
     auto config = Configuration::readJSONFile("config.json");
     vector<pair<string, vector<string>>> solvers = config.first.second;
     vector<string> parsers = config.second.second;
-//    vector<pair<string, vector<string>>> solvers = {pair<string, vector<string>>("MatrixSolver", {"A*"}),
-//                                                    pair<string, vector<string>>("MathSolver",
-//                                                                                 {"Reverse Polish Interpreter"})};
-//    vector<string> parser = {"FileParser", "CommandPromptParser"};
-//    Menu *m = new CommandPromptMenu(solvers, parser);
-//    m->showMenu();
-//
-//    delete m;
+    Menu *m = new CommandPromptMenu(solvers, parser);
+    bool solveAgain = true;
+    while (solveAgain) {
+        solveAgain = m->solveProblem();
+    }
+
+    delete m;
     return 0;
 }
 
