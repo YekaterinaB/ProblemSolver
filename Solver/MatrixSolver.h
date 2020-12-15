@@ -12,23 +12,16 @@
 #include "../Maze/State.h"
 
 
-class MatrixSolver : public Solver<string, vector<State * >,MatrixMaze> {
-
+class MatrixSolver : public Solver {
 private:
-    MatrixMaze searchable = MatrixMaze();
-    void createProblemFromString(const string &str);
+    MatrixSearcher *searcher;
 public:
     explicit MatrixSolver(MatrixSearcher *s) {
         searcher = s;
     }
 
-   // initialize matrixMaze
-
-    virtual string toString(const vector<State *> &backtrace);
-
-    virtual vector<State *> solve(const string &problem){
-        createProblemFromString(problem);
-        vector<State *> backtrace = searcher->search(searchable);
+    virtual string solve(const string &problem) {
+        string backtrace = searcher->search(problem);
         return backtrace;
     }
 

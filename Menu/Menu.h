@@ -8,18 +8,18 @@
 class Menu {
 protected:
     ParserFactory parserFactory=ParserFactory();
+    SolverFactory solverFactory = SolverFactory();
+
     vector<pair<string, vector<string>>> solvers;
     vector<string> parsers;
-    string solver="";
-    string searcher="";
-    string parser="";
+
 public:
     Menu(vector<pair<string, vector<string>>> &s, vector<string> &p) {
         solvers = s;
         parsers = p;
     }
 
-    virtual void showMenu() = 0;
+    virtual bool solveProblem() = 0;
 
     virtual ~Menu() = default;
 };

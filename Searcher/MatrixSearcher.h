@@ -9,20 +9,24 @@
 #include "../Maze/State.h"
 #include "Searcher.h"
 
-class MatrixSearcher : public Searcher<vector<State *>, MatrixMaze> {
+class MatrixSearcher : public Searcher {
 protected:
-    int numberOfNodesEvaluated = 0;
 
     State *findState(const vector<State *> &allStates, const State &stateToFind);
 
-public:
-    virtual vector<State *> search(MatrixMaze &searchable) = 0;
-
-    int getNumberOfNodesEvaluated();
-
     vector<State *> backTrace(State *goal);
 
-    vector<State *> backTraceAndUpdateCost(State *s, MatrixMaze &searchable);
+    MatrixMaze createProblemFromString(const string &str){}
+
+    string toString(const vector<State *> &backtrace){}
+
+
+public:
+
+    virtual string search(const string &matrixMazeStr) = 0;
+
+    virtual ~MatrixSearcher() = default;
+
 };
 
 #endif //PROBLEMSOLVER_MATRIXSEARCHER_H

@@ -171,11 +171,11 @@ Expression *ReversePolishInterpreter::interpret(const string &mathExp) {
     return expressionStack.top();
 }
 
- double ReversePolishInterpreter::search(string &mathExp) {
+ string ReversePolishInterpreter::search(const string &mathExp) {
     Expression *e = interpret(mathExp);
     double result= e->calculate();
     delete e;
-    return result;
+    return to_string(result);
 }
 
 

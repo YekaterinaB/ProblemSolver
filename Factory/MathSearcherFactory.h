@@ -2,13 +2,15 @@
 // Created by katya on 12/10/2020.
 //
 
-#ifndef PROBLEMSOLVER_MATHSOLVERFACTORY_H
-#define PROBLEMSOLVER_MATHSOLVERFACTORY_H
+#ifndef PROBLEMSOLVER_MATHSEARCHERFACTORY_H
+#define PROBLEMSOLVER_MATHSEARCHERFACTORY_H
 
-#include "SolverFactory.h"
+#include <map>
+#include "SearcherFactory.h"
+#include "../Searcher/ReversePolishInterpreter.h"
 
-
-class MathSolverFactory : public SolverFactory<MathSolver> {
+using namespace std;
+class MathSearcherFactory : public SearcherFactory {
 private:
     enum class SearcherType {
         ReversePolishInterpreter
@@ -19,17 +21,17 @@ private:
                     {"ReversePolishInterpreter", SearcherType::ReversePolishInterpreter}
             };
 public:
-    virtual MathSolver *getSolver(const string &searcher) {
+    virtual MathSearcher *getSearcher(const string &searcher) {
         SearcherType searcherType = searcherToInt[searcher];
         switch (searcherType) {
             case SearcherType::ReversePolishInterpreter:
-                MathSearcher *s = new ReversePolishInterpreter();
-                return new MathSolver(s);
+                return new ReversePolishInterpreter();
+
         }
 
     }
 
-    virtual ~MathSolverFactory() = default;
+    virtual ~MathSearcherFactory() = default;
 };
 
-#endif //PROBLEMSOLVER_MATHSOLVERFACTORY_H
+#endif //PROBLEMSOLVER_MATHSEARCHERFACTORY_H

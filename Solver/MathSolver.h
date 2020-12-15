@@ -8,23 +8,22 @@
 #include "Solver.h"
 #include "../Expression/Expression.h"
 
-class MathSolver : public Solver<string, double, string> {
+class MathSolver : public Solver {
+private:
+    MathSearcher * searcher;
 public:
     explicit MathSolver(MathSearcher *s) {
         searcher = s;
     }
 
-    virtual string toString(const double &solution) {
-        return to_string(solution);
-    }
-
-    virtual double solve(const string &problem) {
+    virtual string solve(const string &problem) {
         string mathExp = problem;
-        double answer = searcher->search(mathExp);
-        return answer;
+        return searcher->search(mathExp);
     }
 
-    virtual ~MathSolver() = default;
+    virtual ~MathSolver(){
+        delete searcher;
+    }
 };
 
 #endif //PROBLEMSOLVER_MATHSOLVER_H
