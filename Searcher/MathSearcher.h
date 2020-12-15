@@ -9,15 +9,15 @@
 
 using namespace std;
 
-class MathSearcher : public Searcher<double, string> {
+class MathSearcher : public Searcher {
 protected:
     bool isOperator(const string &s) {
         return s == "-" || s == "+" ||
                s == "*" || s == "/";
     }
 public:
-    virtual double search(string &searchable) = 0;
-
+    virtual string search(const string &searchable) = 0;
+    virtual ~MathSearcher()= default;
 };
 
 #endif //PROBLEMSOLVER_MATHSEARCHER_H

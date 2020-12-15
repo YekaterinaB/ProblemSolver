@@ -1,14 +1,24 @@
 #include <iostream>
 #include "CommandPromptMenu.h"
 
-void CommandPromptMenu::showMenu() {
-    chooseSolverAndSearcher();
+bool CommandPromptMenu::solveProblem() {
+    Solver * s=chooseSolverAndSearcher();
     Parser * p= chooseParser();
     string problem= p->parse();
-//    Solver * s = getSolverFromFactory();
-
+    string solution= s->solve(problem);
     delete p;
-//    delete s;
+    delete s;
+
+    cout << "The solution is: "+ solution<< endl;
+    return doYouWantToSolveAgain();
+}
+bool CommandPromptMenu::doYouWantToSolveAgain() {
+    int indexParser = 0;
+    cout << "Do you want to solve another problem?:" << endl;
+    cout << "(1) Yes" << endl;
+    cout << "(2) No" << endl;
+    cin >> indexParser;
+    return indexParser == 1;
 
 }
 
@@ -25,7 +35,8 @@ Parser * CommandPromptMenu::chooseParser() {
 
 }
 
-void CommandPromptMenu::chooseSolverAndSearcher() {
+
+Solver * CommandPromptMenu::chooseSolverAndSearcher() {
     cout << "Choose a solver:" << endl;
 
     for (auto i = 0; i < solvers.size(); i++) {
@@ -33,7 +44,7 @@ void CommandPromptMenu::chooseSolverAndSearcher() {
     }
     int indexSolver = 0;
     cin >> indexSolver;
-    solver = solvers[indexSolver - 1].first;
+    string solver = solvers[indexSolver - 1].first;
     cout << "Choose an algorithm to solve with:" << endl;
 
     for (auto i = 0; i < solvers[indexSolver - 1].second.size(); i++) {
@@ -41,5 +52,7 @@ void CommandPromptMenu::chooseSolverAndSearcher() {
     }
     int indexSearcher = 0;
     cin >> indexSearcher;
-    searcher = solvers[indexSolver - 1].second[indexSearcher - 1];
+    string searcher = solvers[indexSolver - 1].second[indexSearcher - 1];
+    Solver * s =solverFactory.getSolver(solver,searcher);
+    return s;
 }

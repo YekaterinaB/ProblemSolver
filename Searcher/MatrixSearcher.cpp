@@ -1,4 +1,5 @@
 
+#include <iomanip>
 #include "MatrixSearcher.h"
 
 State *MatrixSearcher::findState(const vector<State *> &allStates, const State &stateToFind) {
@@ -7,13 +8,9 @@ State *MatrixSearcher::findState(const vector<State *> &allStates, const State &
             return s;
         }
     }
-
     return nullptr;
 }
 
-int MatrixSearcher::getNumberOfNodesEvaluated() {
-    return this->numberOfNodesEvaluated;
-}
 
 vector<State *> MatrixSearcher::backTrace(State *goal) {
     vector<State *> backtrace;
@@ -25,14 +22,3 @@ vector<State *> MatrixSearcher::backTrace(State *goal) {
     return backtrace;
 }
 
-vector<State *> MatrixSearcher::backTraceAndUpdateCost(State *s, MatrixMaze &searchable) {
-    vector<State *> route = backTrace(s);
-
-    double cost = 0;
-    for (auto it = route.begin(); it != route.end(); it++) {
-        cost += searchable.getCostToGetToNode(*it);
-        (*it)->setCost(cost);
-    }
-    return route;
-
-}

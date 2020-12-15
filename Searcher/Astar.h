@@ -14,9 +14,9 @@
 
 class Astar : public MatrixSearcher {
 public:
-    virtual vector<State *> search(MatrixMaze &searchable);
+    virtual string search(const string &matrixMazeStr);
 
-
+    virtual ~Astar()= default;
 
 };
 

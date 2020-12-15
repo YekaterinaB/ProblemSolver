@@ -2,7 +2,7 @@
 
 string CommandPromptParser::parse() {
     string userInput;
-    cout << "Enter a problem:";
+    cout << "Enter the problem:";
     cin >> userInput;
-
+    return userInput;
 }

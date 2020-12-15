@@ -9,7 +9,10 @@ int main() {
                                                                                  {"Reverse Polish Interpreter"})};
     vector<string> parser = {"FileParser", "CommandPromptParser"};
     Menu *m = new CommandPromptMenu(solvers, parser);
-    m->showMenu();
+    bool solveAgain = true;
+    while (solveAgain) {
+        solveAgain = m->solveProblem();
+    }
 
     delete m;
     return 0;
