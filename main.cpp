@@ -7,7 +7,7 @@ int main() {
     vector<pair<string, vector<string>>> solvers = {pair<string, vector<string>>("MatrixSolver", {"A*"}),
                                                     pair<string, vector<string>>("MathSolver",
                                                                                  {"Reverse Polish Interpreter"})};
-    vector<string> parser = {"FileParser", "CommandPromptParser"};
+    vector<string> parser = {"CommandPromptParser"};
     Menu *m = new CommandPromptMenu(solvers, parser);
     bool solveAgain = true;
     while (solveAgain) {

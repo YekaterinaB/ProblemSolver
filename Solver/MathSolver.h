@@ -21,8 +21,11 @@ public:
         string solution;
         try {
             solution = searcher->search(mathExp);
-        }catch (const std::exception &e){
-            solution=e.what();
+        }catch (const string &e){
+            solution=e;
+        }catch(...){
+            solution="An error has accoured.";
+
         }
         return solution+"\n";
     }

@@ -55,15 +55,15 @@ MatrixMaze MatrixSearcher::createProblemFromString(const string &str) {
     matrix.pop_back();
     if (!StringUtils::matchRegex(initial.getDescription(), POINTS_REGEX)
         || !StringUtils::matchRegex(goal.getDescription(), POINTS_REGEX)) {
-        throw "Could not parse initial or goal position: " + initial.getDescription()
-              + " ," + goal.getDescription();
+        throw string("Could not parse initial or goal position: " + initial.getDescription()
+              + " ," + goal.getDescription());
     }
 
     int M = (StringUtils::split(matrix.front(), ',')).size();
     int N = matrix.size();
 
     if (!MatrixMaze::areInitialAndGoalValid(initial, goal, N, M)) {
-        throw "Starting/end position invalid";
+        throw string("Starting/end position invalid");
     }
 
     auto **mat = new double *[N];
