@@ -1,0 +1,6 @@
+{    "Solvers":{
+	"MatrixSolver":["A*"],
+	"MathSolver":["Reverse Polish Interpreter"]
+	},
+     "Parsers":["FileParser","CommandPromptParser"]
+}

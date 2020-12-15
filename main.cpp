@@ -3,11 +3,9 @@
 #include "Configuration/Configuration.h"
 
 int main() {
-//    vector<pair<string, vector<string>>> solvers = Configuration::readXmlFile("config.xml");
-    vector<pair<string, vector<string>>> solvers = {pair<string, vector<string>>("MatrixSolver", {"A*"}),
-                                                    pair<string, vector<string>>("MathSolver",
-                                                                                 {"Reverse Polish Interpreter"})};
-    vector<string> parser = {"CommandPromptParser"};
+    auto config = Configuration::readJSONFile("config.json");
+    vector<pair<string, vector<string>>> solvers = config.first.second;
+    vector<string> parsers = config.second.second;
     Menu *m = new CommandPromptMenu(solvers, parser);
     bool solveAgain = true;
     while (solveAgain) {
