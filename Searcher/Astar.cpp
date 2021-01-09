@@ -1,8 +1,10 @@
 #include <algorithm>
 #include "Astar.h"
+#include "../Logger/Logger.h"
 
 string Astar::search(const string &matrixMazeStr) {
-    MatrixMaze matrixMaze =createProblemFromString(matrixMazeStr);
+    Logger::getInstance()->log("Starting to solve the problem using A*...\n" + matrixMazeStr);
+    MatrixMaze matrixMaze = createProblemFromString(matrixMazeStr);
     // The set of discovered nodes that may need to be (re-)expanded.
     // Initially, only the start node is known.
     State *initialState = matrixMaze.getInitialState();
@@ -34,8 +36,9 @@ string Astar::search(const string &matrixMazeStr) {
         current = openSet.top();
         currentStatePointer = findState(currentStates, current);
         if (current == goalState) {
-            vector<State*> trace= backTrace(currentStatePointer);
-            return toString(trace,matrixMaze);
+            vector<State *> trace = backTrace(currentStatePointer);
+            Logger::getInstance()->log("Found a solution to the problem...");
+            return toString(trace, matrixMaze);
         }
 
         openSet.pop();
@@ -66,5 +69,6 @@ string Astar::search(const string &matrixMazeStr) {
     }
 
     // Open set is empty but goal was never reached
+    Logger::getInstance()->log("No solution for the current problem...");
     return {};
 }

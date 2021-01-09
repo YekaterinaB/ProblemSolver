@@ -2,9 +2,11 @@
 // Created by eladg on 10/12/2020.
 //
 #include "Configuration.h"
+#include "../Logger/Logger.h"
 
 pair<pair<string, vector<pair<string, vector<string>>>>, pair<string, vector<string>>>
 Configuration::readJSONFile(const string &dir) {
+    Logger::getInstance()->log("Reading JSON configuration file...");
     ifstream i(dir);
     if (!i.is_open()) {
         cerr << "Could not read json file!" << endl;
