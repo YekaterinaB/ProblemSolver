@@ -68,17 +68,9 @@ public:
     State *createSuccesorState(State *s, int i, int j) {
         string place = to_string(i) + ',' + to_string(j);
         State *newState = nullptr;
-        for (State *state:allStates) {
-            if (state->getDescription() == place) {
-                newState = state;
-                break;
-            }
-        }
-        if (newState == nullptr) {
-            newState = new State();
-            newState->init(place);
-            allStates.push_back(newState);
-        }
+        newState = new State();
+        newState->init(place);
+        allStates.push_back(newState);
 
         return newState;
     }
