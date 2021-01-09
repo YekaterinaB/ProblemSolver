@@ -1,4 +1,3 @@
-
 #ifndef PROBLEMSOLVER_COMMANDPROMPTMENU_H
 #define PROBLEMSOLVER_COMMANDPROMPTMENU_H
 
@@ -6,12 +5,14 @@
 
 class CommandPromptMenu : public Menu {
 private:
-    Solver * chooseSolverAndSearcher();
-    Parser * chooseParser();
+    Solver *chooseSolverAndSearcher();
+
+    Parser *chooseParser();
+
     bool doYouWantToSolveAgain();
 
 public:
-    CommandPromptMenu(vector<pair<string, vector<string>>> &s, vector<string> &p) : Menu(s,p) {}
+    CommandPromptMenu(vector<pair<string, vector<string>>> &s, vector<string> &p) : Menu(s, p) {}
 
     virtual bool solveProblem();
 

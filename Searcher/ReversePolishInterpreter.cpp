@@ -1,6 +1,7 @@
 #include <stack>
 #include <cstring>
 #include "ReversePolishInterpreter.h"
+#include "../Logger/Logger.h"
 
 regex doubleNumberRegex("^(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?$");
 map<string, int> operatorPrecedence = {{"+", 1},
@@ -171,9 +172,10 @@ Expression *ReversePolishInterpreter::interpret(const string &mathExp) {
     return expressionStack.top();
 }
 
- string ReversePolishInterpreter::search(const string &mathExp) {
+string ReversePolishInterpreter::search(const string &mathExp) {
+    Logger::getInstance()->log("Starting to solve using ReversePolishInterpreter...\n" + mathExp);
     Expression *e = interpret(mathExp);
-    double result= e->calculate();
+    double result = e->calculate();
     delete e;
     return to_string(result);
 }

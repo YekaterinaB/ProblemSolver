@@ -7,7 +7,7 @@
 
 class Menu {
 protected:
-    ParserFactory parserFactory=ParserFactory();
+    ParserFactory parserFactory = ParserFactory();
     SolverFactory solverFactory = SolverFactory();
 
     vector<pair<string, vector<string>>> solvers;

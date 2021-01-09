@@ -12,11 +12,11 @@
 class MatrixSearcher : public Searcher {
 protected:
 
+    MatrixMaze createProblemFromString(const string &str);
+
     State *findState(const vector<State *> &allStates, const State &stateToFind);
 
     vector<State *> backTrace(State *goal);
-
-    MatrixMaze createProblemFromString(const string &str);
 
     string toString(const vector<State *> &backtrace,const MatrixMaze &matrixMaze);
 

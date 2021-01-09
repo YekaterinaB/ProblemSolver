@@ -10,7 +10,7 @@
 
 class MathSolver : public Solver {
 private:
-    MathSearcher * searcher;
+    MathSearcher *searcher;
 public:
     explicit MathSolver(MathSearcher *s) {
         searcher = s;
@@ -21,16 +21,19 @@ public:
         string solution;
         try {
             solution = searcher->search(mathExp);
-        }catch (const string &e){
-            solution=e;
-        }catch(...){
-            solution="An error has accoured.";
+            Logger::getInstance()->log("Found a solution using MathSolver...\n" + solution);
+        } catch (const string &e) {
+            Logger::getInstance()->log("An error has occurred\n" + e);
+            solution = e;
+        } catch (...) {
+            Logger::getInstance()->log("An error has occurred...");
+            solution = "An error has accoured.";
 
         }
-        return solution+"\n";
+        return solution + "\n";
     }
 
-    virtual ~MathSolver(){
+    virtual ~MathSolver() {
         delete searcher;
     }
 };

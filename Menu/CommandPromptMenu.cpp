@@ -1,17 +1,20 @@
 #include <iostream>
 #include "CommandPromptMenu.h"
+#include "../Logger/Logger.h"
 
 bool CommandPromptMenu::solveProblem() {
-    Solver * s=chooseSolverAndSearcher();
-    Parser * p= chooseParser();
-    string problem= p->parse();
-    string solution= s->solve(problem);
+    Logger::getInstance()->log("Choosing problem at command prompt menu...");
+    Solver *s = chooseSolverAndSearcher();
+    Parser *p = chooseParser();
+    string problem = p->parse();
+    string solution = s->solve(problem);
     delete p;
     delete s;
 
-    cout << "The solution is:\n "+ solution<< endl;
+    cout << "The solution is:\n " + solution << endl;
     return doYouWantToSolveAgain();
 }
+
 bool CommandPromptMenu::doYouWantToSolveAgain() {
     int indexParser = 0;
     cout << "Do you want to solve another problem?" << endl;
@@ -19,10 +22,9 @@ bool CommandPromptMenu::doYouWantToSolveAgain() {
     cout << "(2) No" << endl;
     cin >> indexParser;
     return indexParser == 1;
-
 }
 
-Parser * CommandPromptMenu::chooseParser() {
+Parser *CommandPromptMenu::chooseParser() {
     cout << "Choose a way to upload the problem:" << endl;
     for (auto i = 0; i < parsers.size(); i++) {
         cout << "(" + to_string(i + 1) + ") " + parsers[i] << endl;
@@ -30,13 +32,13 @@ Parser * CommandPromptMenu::chooseParser() {
     int indexParser = 0;
     cin >> indexParser;
     string parser = parsers[indexParser - 1];
-    Parser * p =parserFactory.getParser(parser);
+    Parser *p = parserFactory.getParser(parser);
     return p;
 
 }
 
 
-Solver * CommandPromptMenu::chooseSolverAndSearcher() {
+Solver *CommandPromptMenu::chooseSolverAndSearcher() {
     cout << "Choose a solver:" << endl;
 
     for (auto i = 0; i < solvers.size(); i++) {
@@ -53,6 +55,6 @@ Solver * CommandPromptMenu::chooseSolverAndSearcher() {
     int indexSearcher = 0;
     cin >> indexSearcher;
     string searcher = solvers[indexSolver - 1].second[indexSearcher - 1];
-    Solver * s =solverFactory.getSolver(solver,searcher);
+    Solver *s = solverFactory.getSolver(solver, searcher);
     return s;
 }
