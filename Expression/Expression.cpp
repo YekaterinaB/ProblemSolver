@@ -9,12 +9,13 @@ double Value::calculate() {
 Value::Value(const double number) {
     this->num = number;
 }
+
 //binary
-Expression* BinaryOperator::getLeft() {
+Expression *BinaryOperator::getLeft() {
     return this->left;
 }
 
-Expression* BinaryOperator::getRight() {
+Expression *BinaryOperator::getRight() {
     return this->right;
 }
 
@@ -60,10 +61,11 @@ Div::Div(Expression *leftEX, Expression *rightEX) {
 }
 
 double Div::calculate() {
-    if (this->getRight()->calculate() < 0.0001) {
+    const auto rightValue = this->getRight()->calculate();
+    if (std::abs(rightValue) < 0.0001) {
         throw std::string("Divide by 0");
     }
-    return (this->getLeft()->calculate() / this->getRight()->calculate());
+    return (this->getLeft()->calculate() / rightValue);
 }
 
 //unary

@@ -24,7 +24,6 @@ private:
             {
                     {"MatrixSolver", SolverType::MATRIX_SOLVER},
                     {"MathSolver",   SolverType::MATH_SOLVER}
-
             };
 public:
 
