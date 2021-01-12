@@ -22,7 +22,9 @@ protected:
 
 
 public:
-
+    MatrixSearcher(){
+        _type="MatrixSearcher";
+    }
     virtual string search(const string &matrixMazeStr) = 0;
 
     virtual ~MatrixSearcher() = default;

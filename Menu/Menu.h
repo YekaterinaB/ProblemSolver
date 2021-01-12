@@ -8,8 +8,8 @@
 
 class Menu {
 private:
-    ParserFactory parserFactory = ParserFactory();
-    SolverFactory solverFactory = SolverFactory();
+    ParserFactory _parserFactory = ParserFactory();
+    SolverFactory _solverFactory = SolverFactory();
 
     void initSolversMap(const vector<pair<string,vector<string>>> &s);
     void initParserMap(const vector<string> &p);
@@ -19,13 +19,13 @@ private:
 
 protected:
 
-    unordered_map<string,Solver *> searcherMap;
-    unordered_map<string,vector<string>> solversMap;
+    unordered_map<string,Solver *> _searcherMap;
+    unordered_map<string,vector<string>> _solversMap;
 
-    unordered_map<string,Parser *> parsersMap;
+    unordered_map<string,Parser *> _parsersMap;
 
-    Solver * currentSolver= nullptr;
-    Parser * currentParser=nullptr;
+    Solver * _currentSolver= nullptr;
+    Parser * _currentParser=nullptr;
 
 public:
     Menu(const vector<pair<string, vector<string>>> &s,const vector<string> &p);

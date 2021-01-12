@@ -10,13 +10,11 @@
 #include "../Searcher/ReversePolishInterpreter.h"
 #include "../Solver/MathSolver.h"
 #include "SearcherFactory.h"
-#include "MathSearcherFactory.h"
-#include "MatirxSearcherFactory.h"
+
 
 using namespace std;
 
 class SolverFactory {
-private:
 private:
     enum class SolverType {
         MATH_SOLVER, MATRIX_SOLVER
@@ -31,14 +29,15 @@ private:
 public:
 
     Solver *getSolver(const string &solver, const string &searcher) {
+        SearcherFactory searcherFactory;
         SolverType solverType = searcherToInt[solver];
         Solver *s = nullptr;
         switch (solverType) {
             case SolverType::MATH_SOLVER:
-                s = new MathSolver(MathSearcherFactory().getSearcher(searcher));
+                s = new MathSolver(searcherFactory.getSearcher(searcher));
                 break;
             case SolverType::MATRIX_SOLVER:
-                s = new MatrixSolver(MatrixSearcherFactory().getSearcher(searcher));
+                s = new MatrixSolver(searcherFactory.getSearcher(searcher));
                 break;
 
         }

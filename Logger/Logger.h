@@ -12,8 +12,8 @@ using namespace std;
 
 class Logger {
 private:
-    static Logger *logger;
-    ofstream file;
+    static Logger *_logger;
+    ofstream _file;
 
     Logger();
 

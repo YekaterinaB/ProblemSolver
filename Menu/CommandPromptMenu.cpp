@@ -6,8 +6,8 @@ bool CommandPromptMenu::solveProblem() {
     Logger::getInstance()->log("Choosing problem at command prompt menu...");
     setSolver();
     setParser();
-    string problem = this->currentParser->parse();
-    string solution = this->currentSolver->solve(problem);
+    string problem = this->_currentParser->parse();
+    string solution = this->_currentSolver->solve(problem);
 
     cout << "The solution is:\n " + solution << endl;
     return doYouWantToSolveAgain();
@@ -27,10 +27,10 @@ bool CommandPromptMenu::doYouWantToSolveAgain() {
 
 void CommandPromptMenu::setParser() {
     int parserIndex=0;
-    while (!(parserIndex > 0 && parserIndex <= parsersMap.size())) {
+    while (!(parserIndex > 0 && parserIndex <= _parsersMap.size())) {
         int i = 1;
         cout << "Choose a way to upload the problem:" << endl;
-        for (auto &entry:parsersMap) {
+        for (auto &entry:_parsersMap) {
             cout <<"("+ to_string(i) + ") " + entry.first << endl;
             i++;
         }
@@ -39,42 +39,44 @@ void CommandPromptMenu::setParser() {
     //find string to index
     int j=1;
     string parserStr;
-    for(auto iter= parsersMap.begin();iter !=parsersMap.end(); iter++ ,j++){
+    for(auto iter= _parsersMap.begin(); iter != _parsersMap.end(); iter++ ,j++){
         if(j == parserIndex)
         {
             parserStr = iter->first;
             break;
         }
     }
-    currentParser = parsersMap[parserStr];
+    _currentParser = _parsersMap[parserStr];
 }
 
 void CommandPromptMenu::setSolver() {
     int solverIndex=0;
 
-    while (!(solverIndex > 0  && solverIndex <= solversMap.size())) {
+    while (!(solverIndex > 0  && solverIndex <= _solversMap.size())) {
         int i = 1;
         cout << "Choose a solver:" << endl;
 
-        for (auto &entry:solversMap) {
-            cout << to_string(i) + ". " + entry.first << endl;
+        for (auto &entry:_solversMap) {
+            cout <<"("+ to_string(i) + ") " + entry.first << endl;
             i++;
         }
         cin >> solverIndex;
     }
     //find solver string from index
     int j=1;
+    string solverStr;
     vector<string> searchers;
-    for(auto iter= solversMap.begin(); iter !=solversMap.end(); iter++ ,j++){
+    for(auto iter= _solversMap.begin(); iter != _solversMap.end(); iter++ ,j++){
         if(j == solverIndex)
         {
+            solverStr = iter->first;
             searchers = iter->second;
             break;
         }
     }
     string searcherStr=getSearcherFromUser(searchers);
 
-    this->currentSolver = searcherMap[searcherStr];
+    this->_currentSolver = _searcherMap[solverStr + "_" + searcherStr];
 
 }
 

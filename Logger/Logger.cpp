@@ -4,39 +4,39 @@
 
 #include "Logger.h"
 
-Logger *Logger::logger = nullptr;
+Logger *Logger::_logger = nullptr;
 
 Logger::Logger() {
     try {
-        file = ofstream("logger.txt");
+        _file = ofstream("logger.txt");
     } catch (...) {
         cerr << "Could not create logger file";
     }
 }
 
 Logger::~Logger() {
-    if (file && file.is_open()) {
-        file.close();
+    if (_file && _file.is_open()) {
+        _file.close();
     }
 }
 
 Logger *Logger::getInstance() {
-    if (!logger) {
-        logger = new Logger();
+    if (!_logger) {
+        _logger = new Logger();
     }
 
-    return logger;
+    return _logger;
 }
 
 void Logger::log(const string &message) {
-    if (file && file.is_open()) {
-        file << message + '\n';
+    if (_file && _file.is_open()) {
+        _file << message + '\n';
     }
 }
 
 
 void Logger::resetInstance() {
-    delete logger;
-    logger = nullptr;
+    delete _logger;
+    _logger = nullptr;
 }
 

@@ -27,9 +27,9 @@ void ReversePolishInterpreter::readingStringToReversePolish(const string &mathEx
                 char number[10] = {0};
                 strncpy(number, &numberVector[0], numberVector.size());
                 if (!regex_match(number, doubleNumberRegex)) {
-                    strcpy(this->excep, "Character is not number double: ");
-                    strcat(this->excep, number);
-                    throw string(this->excep);
+                    strcpy(this->_excep, "Character is not number double: ");
+                    strcat(this->_excep, number);
+                    throw string(this->_excep);
                 }
                 outputQueue.push(number);
                 numberVector.clear();
@@ -70,9 +70,9 @@ queue<string> ReversePolishInterpreter::getReversePolish(const string &mathExp) 
         char number[10] = {0};
         strncpy(number, &numberVector[0], numberVector.size());
         if (!regex_match(number, doubleNumberRegex)) {
-            strcpy(this->excep, "Character is not number double: ");
-            strcat(this->excep, number);
-            throw string(this->excep);
+            strcpy(this->_excep, "Character is not number double: ");
+            strcat(this->_excep, number);
+            throw string(this->_excep);
         }
         outputQueue.push(number);
         numberVector.clear();
@@ -158,9 +158,9 @@ Expression *ReversePolishInterpreter::interpret(const string &mathExp) {
                 expressionStack.push(new Value(stod(front)));
                 polish.pop();
             } else {
-                strcpy(this->excep, "Not a number nor a operator inserted in string: ");
-                strcat(this->excep, front.c_str());
-                throw string(this->excep);
+                strcpy(this->_excep, "Not a number nor a operator inserted in string: ");
+                strcat(this->_excep, front.c_str());
+                throw string(this->_excep);
             }
         }
     }

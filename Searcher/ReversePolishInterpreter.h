@@ -17,7 +17,7 @@ using namespace std;
 
 class ReversePolishInterpreter : public MathSearcher {
 private:
-    char excep[128];
+    char _excep[128];
 
     queue<string> getReversePolish(const string &mathExp);
 
