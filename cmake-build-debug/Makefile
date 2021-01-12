@@ -123,6 +123,33 @@ ProblemSolver/fast:
 	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/build
 .PHONY : ProblemSolver/fast
 
+Configuration/Configuration.o: Configuration/Configuration.cpp.o
+
+.PHONY : Configuration/Configuration.o
+
+# target to build an object file
+Configuration/Configuration.cpp.o:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Configuration/Configuration.cpp.o
+.PHONY : Configuration/Configuration.cpp.o
+
+Configuration/Configuration.i: Configuration/Configuration.cpp.i
+
+.PHONY : Configuration/Configuration.i
+
+# target to preprocess a source file
+Configuration/Configuration.cpp.i:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Configuration/Configuration.cpp.i
+.PHONY : Configuration/Configuration.cpp.i
+
+Configuration/Configuration.s: Configuration/Configuration.cpp.s
+
+.PHONY : Configuration/Configuration.s
+
+# target to generate assembly for a file
+Configuration/Configuration.cpp.s:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Configuration/Configuration.cpp.s
+.PHONY : Configuration/Configuration.cpp.s
+
 Expression/Expression.o: Expression/Expression.cpp.o
 
 .PHONY : Expression/Expression.o
@@ -150,6 +177,114 @@ Expression/Expression.cpp.s:
 	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Expression/Expression.cpp.s
 .PHONY : Expression/Expression.cpp.s
 
+Logger/Logger.o: Logger/Logger.cpp.o
+
+.PHONY : Logger/Logger.o
+
+# target to build an object file
+Logger/Logger.cpp.o:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Logger/Logger.cpp.o
+.PHONY : Logger/Logger.cpp.o
+
+Logger/Logger.i: Logger/Logger.cpp.i
+
+.PHONY : Logger/Logger.i
+
+# target to preprocess a source file
+Logger/Logger.cpp.i:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Logger/Logger.cpp.i
+.PHONY : Logger/Logger.cpp.i
+
+Logger/Logger.s: Logger/Logger.cpp.s
+
+.PHONY : Logger/Logger.s
+
+# target to generate assembly for a file
+Logger/Logger.cpp.s:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Logger/Logger.cpp.s
+.PHONY : Logger/Logger.cpp.s
+
+Menu/CommandPromptMenu.o: Menu/CommandPromptMenu.cpp.o
+
+.PHONY : Menu/CommandPromptMenu.o
+
+# target to build an object file
+Menu/CommandPromptMenu.cpp.o:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Menu/CommandPromptMenu.cpp.o
+.PHONY : Menu/CommandPromptMenu.cpp.o
+
+Menu/CommandPromptMenu.i: Menu/CommandPromptMenu.cpp.i
+
+.PHONY : Menu/CommandPromptMenu.i
+
+# target to preprocess a source file
+Menu/CommandPromptMenu.cpp.i:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Menu/CommandPromptMenu.cpp.i
+.PHONY : Menu/CommandPromptMenu.cpp.i
+
+Menu/CommandPromptMenu.s: Menu/CommandPromptMenu.cpp.s
+
+.PHONY : Menu/CommandPromptMenu.s
+
+# target to generate assembly for a file
+Menu/CommandPromptMenu.cpp.s:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Menu/CommandPromptMenu.cpp.s
+.PHONY : Menu/CommandPromptMenu.cpp.s
+
+Menu/Menu.o: Menu/Menu.cpp.o
+
+.PHONY : Menu/Menu.o
+
+# target to build an object file
+Menu/Menu.cpp.o:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Menu/Menu.cpp.o
+.PHONY : Menu/Menu.cpp.o
+
+Menu/Menu.i: Menu/Menu.cpp.i
+
+.PHONY : Menu/Menu.i
+
+# target to preprocess a source file
+Menu/Menu.cpp.i:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Menu/Menu.cpp.i
+.PHONY : Menu/Menu.cpp.i
+
+Menu/Menu.s: Menu/Menu.cpp.s
+
+.PHONY : Menu/Menu.s
+
+# target to generate assembly for a file
+Menu/Menu.cpp.s:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Menu/Menu.cpp.s
+.PHONY : Menu/Menu.cpp.s
+
+Parser/CommandPromptParser.o: Parser/CommandPromptParser.cpp.o
+
+.PHONY : Parser/CommandPromptParser.o
+
+# target to build an object file
+Parser/CommandPromptParser.cpp.o:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Parser/CommandPromptParser.cpp.o
+.PHONY : Parser/CommandPromptParser.cpp.o
+
+Parser/CommandPromptParser.i: Parser/CommandPromptParser.cpp.i
+
+.PHONY : Parser/CommandPromptParser.i
+
+# target to preprocess a source file
+Parser/CommandPromptParser.cpp.i:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Parser/CommandPromptParser.cpp.i
+.PHONY : Parser/CommandPromptParser.cpp.i
+
+Parser/CommandPromptParser.s: Parser/CommandPromptParser.cpp.s
+
+.PHONY : Parser/CommandPromptParser.s
+
+# target to generate assembly for a file
+Parser/CommandPromptParser.cpp.s:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Parser/CommandPromptParser.cpp.s
+.PHONY : Parser/CommandPromptParser.cpp.s
+
 Searcher/Astar.o: Searcher/Astar.cpp.o
 
 .PHONY : Searcher/Astar.o
@@ -176,6 +311,33 @@ Searcher/Astar.s: Searcher/Astar.cpp.s
 Searcher/Astar.cpp.s:
 	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Searcher/Astar.cpp.s
 .PHONY : Searcher/Astar.cpp.s
+
+Searcher/MatrixSearcher.o: Searcher/MatrixSearcher.cpp.o
+
+.PHONY : Searcher/MatrixSearcher.o
+
+# target to build an object file
+Searcher/MatrixSearcher.cpp.o:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Searcher/MatrixSearcher.cpp.o
+.PHONY : Searcher/MatrixSearcher.cpp.o
+
+Searcher/MatrixSearcher.i: Searcher/MatrixSearcher.cpp.i
+
+.PHONY : Searcher/MatrixSearcher.i
+
+# target to preprocess a source file
+Searcher/MatrixSearcher.cpp.i:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Searcher/MatrixSearcher.cpp.i
+.PHONY : Searcher/MatrixSearcher.cpp.i
+
+Searcher/MatrixSearcher.s: Searcher/MatrixSearcher.cpp.s
+
+.PHONY : Searcher/MatrixSearcher.s
+
+# target to generate assembly for a file
+Searcher/MatrixSearcher.cpp.s:
+	$(MAKE) -f CMakeFiles/ProblemSolver.dir/build.make CMakeFiles/ProblemSolver.dir/Searcher/MatrixSearcher.cpp.s
+.PHONY : Searcher/MatrixSearcher.cpp.s
 
 Searcher/ReversePolishInterpreter.o: Searcher/ReversePolishInterpreter.cpp.o
 
@@ -240,12 +402,30 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ProblemSolver"
 	@echo "... edit_cache"
+	@echo "... Configuration/Configuration.o"
+	@echo "... Configuration/Configuration.i"
+	@echo "... Configuration/Configuration.s"
 	@echo "... Expression/Expression.o"
 	@echo "... Expression/Expression.i"
 	@echo "... Expression/Expression.s"
+	@echo "... Logger/Logger.o"
+	@echo "... Logger/Logger.i"
+	@echo "... Logger/Logger.s"
+	@echo "... Menu/CommandPromptMenu.o"
+	@echo "... Menu/CommandPromptMenu.i"
+	@echo "... Menu/CommandPromptMenu.s"
+	@echo "... Menu/Menu.o"
+	@echo "... Menu/Menu.i"
+	@echo "... Menu/Menu.s"
+	@echo "... Parser/CommandPromptParser.o"
+	@echo "... Parser/CommandPromptParser.i"
+	@echo "... Parser/CommandPromptParser.s"
 	@echo "... Searcher/Astar.o"
 	@echo "... Searcher/Astar.i"
 	@echo "... Searcher/Astar.s"
+	@echo "... Searcher/MatrixSearcher.o"
+	@echo "... Searcher/MatrixSearcher.i"
+	@echo "... Searcher/MatrixSearcher.s"
 	@echo "... Searcher/ReversePolishInterpreter.o"
 	@echo "... Searcher/ReversePolishInterpreter.i"
 	@echo "... Searcher/ReversePolishInterpreter.s"
