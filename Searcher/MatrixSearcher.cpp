@@ -14,9 +14,9 @@ State *MatrixSearcher::findState(const vector<State *> &allStates, const State &
 
 vector<State *> MatrixSearcher::backTrace(State *goal) {
     vector<State *> backtrace;
-    while (goal->getFather() != nullptr) {
+    while (goal->getPreviousState() != nullptr) {
         backtrace.insert(backtrace.begin(), goal);
-        goal = (*goal).getFather();
+        goal = (*goal).getPreviousState();
     }
     backtrace.insert(backtrace.begin(), goal);// first node
     return backtrace;

@@ -37,35 +37,35 @@ public:
         vector<int> place = getPlacementOfNodeInMatrix(s);
         int i = place.at(0);
         int j = place.at(1);
-        vector<int> dadsPlace;
+        vector<int> previousStatePlacement;
         if (*s == *getInitialState()) {//first node doesnt have a dad
-            dadsPlace = {0, 0};
+            previousStatePlacement = {0, 0};
         } else {
-            dadsPlace = getPlacementOfNodeInMatrix(s->getFather());
+            previousStatePlacement = getPlacementOfNodeInMatrix(s->getPreviousState());
         }
         //check if he didnt go pass the border,
         // and through a wall, and if he is not coming from his dad.
 
         if (i < _sizeRow - 1 && _matrix[i + 1][j] != -1
-            && i + 1 != dadsPlace.at(0)) {
+            && i + 1 != previousStatePlacement.at(0)) {
             succesors.push_back(createSuccesorState(s, i + 1, j));
         }
         if (i > 0 && _matrix[i - 1][j] != -1
-            && i - 1 != dadsPlace.at(0)) {
+            && i - 1 != previousStatePlacement.at(0)) {
             succesors.push_back(createSuccesorState(s, i - 1, j));
         }
         if (j < _sizeCol - 1 && _matrix[i][j + 1] != -1
-            && j + 1 != dadsPlace.at(1)) {
+            && j + 1 != previousStatePlacement.at(1)) {
             succesors.push_back(createSuccesorState(s, i, j + 1));
         }
         if (j > 0 && _matrix[i][j - 1] != -1
-            && j - 1 != dadsPlace.at(1)) {
+            && j - 1 != previousStatePlacement.at(1)) {
             succesors.push_back(createSuccesorState(s, i, j - 1));
         }
         return succesors;
     }
 
-    State *createSuccesorState(State *s, int i, int j) {
+    State* createSuccesorState(State *s, int i, int j) {
         string place = to_string(i) + ',' + to_string(j);
         State *newState = nullptr;
         newState = new State();
@@ -96,17 +96,18 @@ public:
     }
 
     string getDirection(State *s) const{
+        //after finished calculating route, calculate the direction that was chosen
         string direction;
         vector<int> place = getPlacementOfNodeInMatrix(s);
-        vector<int> dadsPlace = getPlacementOfNodeInMatrix(s->getFather());
-        if (place.at(0) == dadsPlace.at(0)) {//same row
-            if (place.at(1) - 1 == dadsPlace.at(1)) {
+        vector<int> previousStatePlace = getPlacementOfNodeInMatrix(s->getPreviousState());
+        if (place.at(0) == previousStatePlace.at(0)) {//same row
+            if (place.at(1) - 1 == previousStatePlace.at(1)) {
                 direction = "Right";
             } else {
                 direction = "Left";
             }
         } else {//same col
-            if (place.at(0) - 1 == dadsPlace.at(0)) {
+            if (place.at(0) - 1 == previousStatePlace.at(0)) {
                 direction = "Down";
             } else {
                 direction = "Up";
@@ -124,6 +125,7 @@ public:
     }
 
     vector<int> getPlacementOfNodeInMatrix(State *s) const {
+        // from string placement to int placement
         vector<string> place =
                 StringUtils::splitByFirstChar((*s).getDescription(), ',');
         int r = atoi(place.at(0).c_str());
@@ -140,6 +142,7 @@ public:
         auto initialSplitted = StringUtils::split(initial.getDescription(), ',');
         auto goalSplitted = StringUtils::split(goal.getDescription(), ',');
 
+        //get positions x,y
         auto xInitial = stod(initialSplitted.at(0));
         auto yInitial = stod(initialSplitted.at(1));
         auto xGoal = stod(goalSplitted.at(0));

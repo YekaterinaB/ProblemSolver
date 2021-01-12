@@ -80,16 +80,61 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Configuration/Configuration.cpp">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Configuration/Configuration.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Expression/Expression.cpp">
 			<Option target="ProblemSolver"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Expression/Expression.h">
 			<Option target="ProblemSolver"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Factory/ParserFactory.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Factory/SearcherFactory.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Factory/SolverFactory.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Logger/Logger.cpp">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Logger/Logger.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Maze/MatrixMaze.h">
 			<Option target="ProblemSolver"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Maze/State.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Menu/CommandPromptMenu.cpp">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Menu/CommandPromptMenu.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Menu/Menu.cpp">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Menu/Menu.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Parser/CommandPromptParser.cpp">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Parser/CommandPromptParser.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Parser/FileParser.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Parser/Parser.h">
 			<Option target="ProblemSolver"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/Astar.cpp">
@@ -99,6 +144,15 @@
 			<Option target="ProblemSolver"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/CustomPriorityQueue.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/MathSearcher.h">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/MatrixSearcher.cpp">
+			<Option target="ProblemSolver"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/MatrixSearcher.h">
 			<Option target="ProblemSolver"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/katya/CLionProjects/ProblemSolver/Searcher/ReversePolishInterpreter.cpp">

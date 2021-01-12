@@ -16,7 +16,9 @@ public:
 class Value : public Expression {
     double num;
 public:
+
     explicit Value(double number);
+
 
     double calculate() override;
 };

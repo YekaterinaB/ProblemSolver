@@ -23,22 +23,22 @@ public:
         _stateDescription = state;
     }
 
-    State(const State &s) {//copy
+    State(const State &s) {//copy const for initial State
         _stateDescription = s.getDescription();
 
         _cost = s.getCurrentCost();
         _cameFrom = s._cameFrom;
     }
 
-
-    State(const string &state, State *cameFrom) {
-        _stateDescription = state;
-        this->_cameFrom = cameFrom;
-    }
+//
+//    State(const string &state, State *cameFrom) {
+//        _stateDescription = state;
+//        this->_cameFrom = cameFrom;
+//    }
 
     void setCameFrom(State *s) { _cameFrom = s; }
 
-    State *getFather() {
+    State *getPreviousState() {
         return _cameFrom;
     }
 
