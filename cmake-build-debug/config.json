@@ -1,6 +1,6 @@
 {    "Solvers":{
 	"MatrixSolver":["A*"],
-	"MathSolver":["Reverse Polish Interpreter"]
+	"MathSolver":["ReversePolishInterpreter"]
 	},
      "Parsers":["CommandPromptParser"]
 }
