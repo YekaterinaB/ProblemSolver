@@ -17,7 +17,7 @@ private:
     std::map<std::string, SearcherType> searcherToInt =
             {
                     {"A*", SearcherType::A_STAR},
-                    {"Reverse Polish Interpreter", SearcherType::ReversePolishInterpreter}
+                    {"ReversePolishInterpreter", SearcherType::ReversePolishInterpreter}
             };
 
 public:
