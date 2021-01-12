@@ -4,12 +4,10 @@
 
 bool CommandPromptMenu::solveProblem() {
     Logger::getInstance()->log("Choosing problem at command prompt menu...");
-    Solver *s = chooseSolverAndSearcher();
-    Parser *p = chooseParser();
-    string problem = p->parse();
-    string solution = s->solve(problem);
-    delete p;
-    delete s;
+    setSolver();
+    setParser();
+    string problem = this->currentParser->parse();
+    string solution = this->currentSolver->solve(problem);
 
     cout << "The solution is:\n " + solution << endl;
     return doYouWantToSolveAgain();
@@ -17,44 +15,83 @@ bool CommandPromptMenu::solveProblem() {
 
 bool CommandPromptMenu::doYouWantToSolveAgain() {
     int indexParser = 0;
-    cout << "Do you want to solve another problem?" << endl;
-    cout << "(1) Yes" << endl;
-    cout << "(2) No" << endl;
-    cin >> indexParser;
+    while (indexParser != 1 && indexParser != 2) {
+        cout << "Do you want to solve another problem?" << endl;
+        cout << "(1) Yes" << endl;
+        cout << "(2) No" << endl;
+        cin >> indexParser;
+    }
     return indexParser == 1;
 }
 
-Parser *CommandPromptMenu::chooseParser() {
-    cout << "Choose a way to upload the problem:" << endl;
-    for (auto i = 0; i < parsers.size(); i++) {
-        cout << "(" + to_string(i + 1) + ") " + parsers[i] << endl;
+
+void CommandPromptMenu::setParser() {
+    int parserIndex=0;
+    while (!(parserIndex > 0 && parserIndex <= parsersMap.size())) {
+        int i = 1;
+        cout << "Choose a way to upload the problem:" << endl;
+        for (auto &entry:parsersMap) {
+            cout <<"("+ to_string(i) + ") " + entry.first << endl;
+            i++;
+        }
+        cin >> parserIndex;
     }
-    int indexParser = 0;
-    cin >> indexParser;
-    string parser = parsers[indexParser - 1];
-    Parser *p = parserFactory.getParser(parser);
-    return p;
+    //find string to index
+    int j=1;
+    string parserStr;
+    for(auto iter= parsersMap.begin();iter !=parsersMap.end(); iter++ ,j++){
+        if(j == parserIndex)
+        {
+            parserStr = iter->first;
+            break;
+        }
+    }
+    currentParser = parsersMap[parserStr];
+}
+
+void CommandPromptMenu::setSolver() {
+    int solverIndex=0;
+
+    while (!(solverIndex > 0  && solverIndex <= solversMap.size())) {
+        int i = 1;
+        cout << "Choose a solver:" << endl;
+
+        for (auto &entry:solversMap) {
+            cout << to_string(i) + ". " + entry.first << endl;
+            i++;
+        }
+        cin >> solverIndex;
+    }
+    //find solver string from index
+    int j=1;
+    vector<string> searchers;
+    for(auto iter= solversMap.begin(); iter !=solversMap.end(); iter++ ,j++){
+        if(j == solverIndex)
+        {
+            searchers = iter->second;
+            break;
+        }
+    }
+    string searcherStr=getSearcherFromUser(searchers);
+
+    this->currentSolver = searcherMap[searcherStr];
 
 }
 
-
-Solver *CommandPromptMenu::chooseSolverAndSearcher() {
-    cout << "Choose a solver:" << endl;
-
-    for (auto i = 0; i < solvers.size(); i++) {
-        cout << "(" + to_string(i + 1) + ") " + solvers[i].first << endl;
+string CommandPromptMenu::getSearcherFromUser(const vector<string> &searchers) {
+    int searcherIndex=0;
+    while (!(searcherIndex > 0 && searcherIndex <= searchers.size())) {
+        cout << "Choose an algorithm to solve with:" << endl;
+        for (int i = 0; i < searchers.size(); i++) {
+            cout <<"(" +to_string(i + 1) + ") " + searchers[i] << endl;
+        }
+        cin >> searcherIndex;
     }
-    int indexSolver = 0;
-    cin >> indexSolver;
-    string solver = solvers[indexSolver - 1].first;
-    cout << "Choose an algorithm to solve with:" << endl;
-
-    for (auto i = 0; i < solvers[indexSolver - 1].second.size(); i++) {
-        cout << "(" + to_string(i + 1) + ") " + solvers[indexSolver - 1].second[i] << endl;
-    }
-    int indexSearcher = 0;
-    cin >> indexSearcher;
-    string searcher = solvers[indexSolver - 1].second[indexSearcher - 1];
-    Solver *s = solverFactory.getSolver(solver, searcher);
-    return s;
+    string searcherStr=searchers[searcherIndex-1];
+    return searcherStr;
 }
+
+
+
+
+
