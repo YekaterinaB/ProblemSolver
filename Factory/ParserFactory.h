@@ -16,13 +16,13 @@ class ParserFactory{
 private:
     enum class ParserType {
         FILE_PARSER,
-        COMMADPROMPT_PARSER
+        COMMANDPROMPT_PARSER
     };
     // map for searcher to int
     std::map<std::string, ParserType> searcherToInt =
             {
                     {"FileParser", ParserType::FILE_PARSER},
-                    {"CommandPromptParser",ParserType::COMMADPROMPT_PARSER}
+                    {"CommandPromptParser",ParserType::COMMANDPROMPT_PARSER}
             };
 
 public:
@@ -32,7 +32,7 @@ public:
         switch (parseType) {
             case ParserType::FILE_PARSER:
                 return new FileParser();
-            case ParserType::COMMADPROMPT_PARSER:
+            case ParserType::COMMANDPROMPT_PARSER:
                 return new CommandPromptParser();
         }
     }

@@ -7,11 +7,15 @@
 Logger *Logger::logger = nullptr;
 
 Logger::Logger() {
-    file = ofstream("logger.txt");
+    try {
+        file = ofstream("logger.txt");
+    } catch (...) {
+        cerr << "Could not create logger file";
+    }
 }
 
 Logger::~Logger() {
-    if (file.is_open()) {
+    if (file && file.is_open()) {
         file.close();
     }
 }
@@ -25,7 +29,9 @@ Logger *Logger::getInstance() {
 }
 
 void Logger::log(const string &message) {
-    file << message + '\n';
+    if (file && file.is_open()) {
+        file << message + '\n';
+    }
 }
 
 

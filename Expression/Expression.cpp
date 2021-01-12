@@ -54,7 +54,6 @@ double Mul::calculate() {
 }
 
 //div
-
 Div::Div(Expression *leftEX, Expression *rightEX) {
     this->left = leftEX;
     this->right = rightEX;
@@ -75,6 +74,7 @@ UnaryOperator::~UnaryOperator() {
 Expression *UnaryOperator::getExp() {
     return this->exp;
 }
+
 //uplus
 UPlus::UPlus(Expression *e) {
     this->exp = e;
@@ -84,7 +84,6 @@ double UPlus::calculate() {
     double val = this->getExp()->calculate();
     return val;
 }
-
 
 //uminus
 UMinus::UMinus(Expression *e) {
