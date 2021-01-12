@@ -26,22 +26,21 @@ bool CommandPromptMenu::doYouWantToSolveAgain() {
 
 
 void CommandPromptMenu::setParser() {
-    int parserIndex=0;
+    int parserIndex = 0;
     while (!(parserIndex > 0 && parserIndex <= _parsersMap.size())) {
         int i = 1;
         cout << "Choose a way to upload the problem:" << endl;
         for (auto &entry:_parsersMap) {
-            cout <<"("+ to_string(i) + ") " + entry.first << endl;
+            cout << "(" + to_string(i) + ") " + entry.first << endl;
             i++;
         }
         cin >> parserIndex;
     }
     //find string to index
-    int j=1;
+    int j = 1;
     string parserStr;
-    for(auto iter= _parsersMap.begin(); iter != _parsersMap.end(); iter++ ,j++){
-        if(j == parserIndex)
-        {
+    for (auto iter = _parsersMap.begin(); iter != _parsersMap.end(); iter++, j++) {
+        if (j == parserIndex) {
             parserStr = iter->first;
             break;
         }
@@ -50,46 +49,44 @@ void CommandPromptMenu::setParser() {
 }
 
 void CommandPromptMenu::setSolver() {
-    int solverIndex=0;
+    int solverIndex = 0;
 
-    while (!(solverIndex > 0  && solverIndex <= _solversMap.size())) {
+    while (!(solverIndex > 0 && solverIndex <= _solversMap.size())) {
         int i = 1;
         cout << "Choose a solver:" << endl;
 
         for (auto &entry:_solversMap) {
-            cout <<"("+ to_string(i) + ") " + entry.first << endl;
+            cout << "(" + to_string(i) + ") " + entry.first << endl;
             i++;
         }
         cin >> solverIndex;
     }
     //find solver string from index
-    int j=1;
+    int j = 1;
     string solverStr;
     vector<string> searchers;
-    for(auto iter= _solversMap.begin(); iter != _solversMap.end(); iter++ ,j++){
-        if(j == solverIndex)
-        {
+    for (auto iter = _solversMap.begin(); iter != _solversMap.end(); iter++, j++) {
+        if (j == solverIndex) {
             solverStr = iter->first;
             searchers = iter->second;
             break;
         }
     }
-    string searcherStr=getSearcherFromUser(searchers);
+    string searcherStr = getSearcherFromUser(searchers);
 
     this->_currentSolver = _searcherMap[solverStr + "_" + searcherStr];
-
 }
 
 string CommandPromptMenu::getSearcherFromUser(const vector<string> &searchers) {
-    int searcherIndex=0;
+    int searcherIndex = 0;
     while (!(searcherIndex > 0 && searcherIndex <= searchers.size())) {
         cout << "Choose an algorithm to solve with:" << endl;
         for (int i = 0; i < searchers.size(); i++) {
-            cout <<"(" +to_string(i + 1) + ") " + searchers[i] << endl;
+            cout << "(" + to_string(i + 1) + ") " + searchers[i] << endl;
         }
         cin >> searcherIndex;
     }
-    string searcherStr=searchers[searcherIndex-1];
+    string searcherStr = searchers[searcherIndex - 1];
     return searcherStr;
 }
 
