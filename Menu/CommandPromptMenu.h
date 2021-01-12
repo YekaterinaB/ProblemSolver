@@ -5,14 +5,14 @@
 
 class CommandPromptMenu : public Menu {
 private:
-    Solver *chooseSolverAndSearcher();
-
-    Parser *chooseParser();
-
     bool doYouWantToSolveAgain();
-
+    string getSearcherFromUser(const vector<string> &searchers);
 public:
-    CommandPromptMenu(vector<pair<string, vector<string>>> &s, vector<string> &p) : Menu(s, p) {}
+    CommandPromptMenu(vector<pair<string, vector<string>>> &s, vector<string> &p): Menu(s, p){}
+
+    virtual void setSolver();
+
+    virtual void setParser();
 
     virtual bool solveProblem();
 
