@@ -6,10 +6,32 @@
 #include "../Searcher/Searcher.h"
 
 using namespace std;
-class SearcherFactory {
-public:
 
-    virtual Searcher* getSearcher(const string &searcher)=0;
+class SearcherFactory {
+private:
+    enum class SearcherType {
+        A_STAR,
+        ReversePolishInterpreter
+    };
+    // map for searcher to int
+    std::map<std::string, SearcherType> searcherToInt =
+            {
+                    {"A*", SearcherType::A_STAR},
+                    {"Reverse Polish Interpreter", SearcherType::ReversePolishInterpreter}
+            };
+
+public:
+    Searcher *getSearcher(const string &searcher) {
+        SearcherType searcherType = searcherToInt[searcher];
+        switch (searcherType) {
+            case SearcherType::A_STAR:
+                return new Astar();
+            case SearcherType::ReversePolishInterpreter:
+                return new ReversePolishInterpreter();
+        }
+    }
+
     virtual ~SearcherFactory() = default;
 };
+
 #endif //PROBLEMSOLVER_SEARCHERFACTORY_H

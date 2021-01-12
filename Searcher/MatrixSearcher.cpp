@@ -73,7 +73,11 @@ MatrixMaze MatrixSearcher::createProblemFromString(const string &str) {
         matrix.erase(matrix.begin());
         for (int j = 0; j < M; j++) {
             string doub = StringUtils::trim(nodes.front());
-            mat[i][j] = stod(doub);
+            try{
+                mat[i][j] = stod(doub);
+            }catch(const exception &e){
+                throw string("Invalid Matrix.");
+            }
             auto it = nodes.begin();
             nodes.erase(it);
         }

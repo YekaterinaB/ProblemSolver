@@ -16,6 +16,9 @@ protected:
                s == "*" || s == "/";
     }
 public:
+    MathSearcher(){
+        _type="MathSearcher";
+    }
     virtual string search(const string &searchable) = 0;
     virtual ~MathSearcher()= default;
 };

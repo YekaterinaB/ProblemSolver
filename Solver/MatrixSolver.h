@@ -15,16 +15,18 @@
 
 class MatrixSolver : public Solver {
 private:
-    MatrixSearcher *searcher;
+    MatrixSearcher *_searcher;
 public:
-    explicit MatrixSolver(MatrixSearcher *s) {
-        searcher = s;
+    MatrixSolver(Searcher *s): _searcher(nullptr){
+        if(s != nullptr && s->getType() == "MatrixSearcher"){
+            _searcher =(MatrixSearcher*) s;
+        }
     }
 
     virtual string solve(const string &problem) {
         string solution;
         try {
-            solution = searcher->search(problem);
+            solution = _searcher->search(problem);
             Logger::getInstance()->log("Found a solution using MatrixSolver...\n" + solution);
         } catch (const string &e) {
             Logger::getInstance()->log("An error has occurred\n" + e);
@@ -38,7 +40,7 @@ public:
     }
 
     virtual ~MatrixSolver() {
-        delete searcher;
+        delete _searcher;
     }
 
 };

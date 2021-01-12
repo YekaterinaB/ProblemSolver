@@ -8,26 +8,26 @@ Menu::Menu(const vector<pair<string, vector<string>>> &s, const vector<string> &
 Menu::~Menu() {
     resetParserMap();
     resetSolversMap();
-    currentSolver= nullptr;
-    currentParser= nullptr;
+    _currentSolver= nullptr;
+    _currentParser= nullptr;
 }
 
 void Menu::resetParserMap() {
-    for(auto & entry : parsersMap ) {
+    for(auto & entry : _parsersMap ) {
         delete entry.second;
     }
-    parsersMap.clear();
-    currentParser= nullptr;
+    _parsersMap.clear();
+    _currentParser= nullptr;
 }
 
 void Menu::resetSolversMap() {
 
-    for(auto &searcherEntry : searcherMap ){
+    for(auto &searcherEntry : _searcherMap ){
         delete searcherEntry.second;
     }
-    searcherMap.clear();
-    solversMap.clear();
-    currentSolver=nullptr;
+    _searcherMap.clear();
+    _solversMap.clear();
+    _currentSolver=nullptr;
 }
 
 
@@ -35,7 +35,7 @@ void Menu::resetSolversMap() {
 void Menu::initParserMap(const vector<string> &p) {
 
     for(auto &parser : p ) {
-        parsersMap[parser]= parserFactory.getParser(parser);
+        _parsersMap[parser]= _parserFactory.getParser(parser);
     }
 
 }
@@ -44,17 +44,10 @@ void Menu::initSolversMap(const vector<pair<string, vector<string>>> &s) {
     for(auto &pair : s ){
         string solver=pair.first;
         vector<string> searchers=pair.second;
-        solversMap[solver]=searchers;
+        _solversMap[solver]=searchers;
         for(auto &searcher : searchers){
-            searcherMap[searcher] = solverFactory.getSolver(solver,searcher);
+            _searcherMap[solver + "_" + searcher] = _solverFactory.getSolver(solver, searcher);
         }
     }
 }
-
-
-
-
-
-
-
 

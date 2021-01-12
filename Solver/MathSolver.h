@@ -1,6 +1,3 @@
-//
-// Created by katya on 12/9/2020.
-//
 
 #ifndef PROBLEMSOLVER_MATHSOLVER_H
 #define PROBLEMSOLVER_MATHSOLVER_H
@@ -10,17 +7,19 @@
 
 class MathSolver : public Solver {
 private:
-    MathSearcher *searcher;
+    MathSearcher *_searcher;
 public:
-    explicit MathSolver(MathSearcher *s) {
-        searcher = s;
+    MathSolver(Searcher *s):_searcher(nullptr) {
+        if(s != nullptr && s->getType() == "MathSearcher"){
+            _searcher =(MathSearcher*) s;
+        }
     }
 
     virtual string solve(const string &problem) {
         string mathExp = problem;
         string solution;
         try {
-            solution = searcher->search(mathExp);
+            solution = _searcher->search(mathExp);
             Logger::getInstance()->log("Found a solution using MathSolver...\n" + solution);
         } catch (const string &e) {
             Logger::getInstance()->log("An error has occurred\n" + e);
@@ -34,7 +33,7 @@ public:
     }
 
     virtual ~MathSolver() {
-        delete searcher;
+        delete _searcher;
     }
 };
 

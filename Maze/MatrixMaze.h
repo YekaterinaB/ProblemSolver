@@ -10,27 +10,27 @@
 
 class MatrixMaze {
 private:
-    double **matrix;
-    int sizeCol;
-    int sizeRow;
-    State *initial;
-    State goal;
-    vector<State *> allStates;
+    double **_matrix;
+    int _sizeCol;
+    int _sizeRow;
+    State *_initial;
+    State _goal;
+    vector<State *> _allStates;
 
 public:
-    MatrixMaze();
+    
     MatrixMaze(double **mat, int N, int M, State &ini, State g) {
-        sizeCol = M;
-        sizeRow = N;
-        matrix = mat;
-        initial = new State(ini);
-        allStates.push_back(initial);
-        goal = g;
+        _sizeCol = M;
+        _sizeRow = N;
+        _matrix = mat;
+        _initial = new State(ini);
+        _allStates.push_back(_initial);
+        _goal = g;
     }
 
-    State * getInitialState()const { return initial; }
+    State * getInitialState()const { return _initial; }
 
-    State getGoalState()const  { return goal; }
+    State getGoalState()const  { return _goal; }
 
     vector<State *> getAllPossibleStates(State *s) {
         vector<State *> succesors = {};
@@ -46,19 +46,19 @@ public:
         //check if he didnt go pass the border,
         // and through a wall, and if he is not coming from his dad.
 
-        if (i < sizeRow - 1 && matrix[i + 1][j] != -1
+        if (i < _sizeRow - 1 && _matrix[i + 1][j] != -1
             && i + 1 != dadsPlace.at(0)) {
             succesors.push_back(createSuccesorState(s, i + 1, j));
         }
-        if (i > 0 && matrix[i - 1][j] != -1
+        if (i > 0 && _matrix[i - 1][j] != -1
             && i - 1 != dadsPlace.at(0)) {
             succesors.push_back(createSuccesorState(s, i - 1, j));
         }
-        if (j < sizeCol - 1 && matrix[i][j + 1] != -1
+        if (j < _sizeCol - 1 && _matrix[i][j + 1] != -1
             && j + 1 != dadsPlace.at(1)) {
             succesors.push_back(createSuccesorState(s, i, j + 1));
         }
-        if (j > 0 && matrix[i][j - 1] != -1
+        if (j > 0 && _matrix[i][j - 1] != -1
             && j - 1 != dadsPlace.at(1)) {
             succesors.push_back(createSuccesorState(s, i, j - 1));
         }
@@ -70,7 +70,7 @@ public:
         State *newState = nullptr;
         newState = new State();
         newState->init(place);
-        allStates.push_back(newState);
+        _allStates.push_back(newState);
 
         return newState;
     }
@@ -82,7 +82,7 @@ public:
 
             auto goalState = getGoalState();
             vector<int> goalPlace = getPlacementOfNodeInMatrix(&goalState);
-            vector<int> initialPlace = getPlacementOfNodeInMatrix(this->initial);
+            vector<int> initialPlace = getPlacementOfNodeInMatrix(this->_initial);
             if (!goalPlace.empty() && !initialPlace.empty()) {
                 double dx1 = abs(place.at(0) - goalPlace.at(0));
                 double dy1 = abs(place.at(1) - goalPlace.at(1));
@@ -120,7 +120,7 @@ public:
         vector<int> placement = getPlacementOfNodeInMatrix(s);
         int r = placement.at(0);
         int c = placement.at(1);
-        return matrix[r][c];
+        return _matrix[r][c];
     }
 
     vector<int> getPlacementOfNodeInMatrix(State *s) const {
@@ -155,14 +155,14 @@ public:
 
 
     ~MatrixMaze() {
-        for (int i = 0; i < sizeRow; i++) {
-            delete[] matrix[i];
+        for (int i = 0; i < _sizeRow; i++) {
+            delete[] _matrix[i];
         }
-        delete[] matrix;
+        delete[] _matrix;
 
-        while (!allStates.empty()) {
-            State *s = allStates.back();
-            allStates.pop_back();
+        while (!_allStates.empty()) {
+            State *s = _allStates.back();
+            _allStates.pop_back();
             delete s;
         }
     }

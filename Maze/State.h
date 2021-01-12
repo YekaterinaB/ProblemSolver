@@ -12,60 +12,60 @@ using namespace std;
 
 class State {
 private:
-    string stateDescription;
-    double cost = INFINITY;
-    State *cameFrom;
+    string _stateDescription;
+    double _cost = INFINITY;
+    State *_cameFrom;
 
 public:
-    State() { cameFrom = nullptr; }
+    State() { _cameFrom = nullptr; }
 
     void init(const string &state) {
-        stateDescription = state;
+        _stateDescription = state;
     }
 
     State(const State &s) {//copy
-        stateDescription = s.getDescription();
+        _stateDescription = s.getDescription();
 
-        cost = s.getCurrentCost();
-        cameFrom = s.cameFrom;
+        _cost = s.getCurrentCost();
+        _cameFrom = s._cameFrom;
     }
 
 
     State(const string &state, State *cameFrom) {
-        stateDescription = state;
-        this->cameFrom = cameFrom;
+        _stateDescription = state;
+        this->_cameFrom = cameFrom;
     }
 
-    void setCameFrom(State *s) { cameFrom = s; }
+    void setCameFrom(State *s) { _cameFrom = s; }
 
     State *getFather() {
-        return cameFrom;
+        return _cameFrom;
     }
 
 
     string getDescription() const {
-        return stateDescription;
+        return _stateDescription;
     }
 
 
-    double getCurrentCost() const { return cost; }
+    double getCurrentCost() const { return _cost; }
 
-    void setCost(double c) { this->cost = c; }
+    void setCost(double c) { this->_cost = c; }
 
     friend bool operator>(const State &s1, const State &s2) {
-        return s1.cost > s2.cost;
+        return s1._cost > s2._cost;
     }
 
     friend bool operator>=(const State &s1, const State &s2) {
-        return s1.cost >= s2.cost;
+        return s1._cost >= s2._cost;
     }
 
     friend bool operator<(const State &s1, const State &s2) {
-        return s1.cost < s2.cost;
+        return s1._cost < s2._cost;
     }
 
     friend bool operator<=(const State &s1, const State &s2) {
-        return s1.cost <= s2.cost;
+        return s1._cost <= s2._cost;
     }
 
     friend bool operator==(const State &s1, const State &s2) {
