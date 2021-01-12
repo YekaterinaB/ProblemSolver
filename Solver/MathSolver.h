@@ -27,7 +27,7 @@ public:
             solution = e;
         } catch (...) {
             Logger::getInstance()->log("An error has occurred...");
-            solution = "An error has accoured.";
+            solution = "An error has occurred.";
 
         }
         return solution + "\n";

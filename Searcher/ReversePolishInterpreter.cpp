@@ -18,9 +18,8 @@ void ReversePolishInterpreter::readingStringToReversePolish(const string &mathEx
     for (int i = 0; i < mathExp.size(); i++) {
         char token[2] = {0}; //More room for \0
         token[0] = mathExp.at(i);
-        if (isdigit(token[0]) || token[0] == '.')
+        if (isdigit(token[0]) || token[0] == '.') {
             // if the number is not from the variable reading.
-        {
             numberVector.push_back(token[0]);
         } else {
             if (!numberVector.empty()) {
@@ -34,7 +33,6 @@ void ReversePolishInterpreter::readingStringToReversePolish(const string &mathEx
                 }
                 outputQueue.push(number);
                 numberVector.clear();
-
             }
 
             //checking the current token
